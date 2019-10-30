@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\begin{document}
+	\begin{flushleft}
+		Authors: \hfill 30.10.2019\\
+		Erick Rosete Beas | er165@uni-freiburg.de\\
+		Jessica Lizeth Borja Diaz | jb986@uni-freiburg.de\\
+	\end{flushleft}
+	\section*{Exercise 1.2 - State Space Size}
+	The goal is to measure the time required to generate the whole state space if every state generation if generating one state
+	take $1x10^{-6} s$.\\\\
+	Lets summarize the important data and variables:
+	\begin{itemize}[noitemsep]
+		\item Five robotic vacuum cleaner.
+		\item 10x10 discrete cells.
+		\item Each robot is in exactly one cell and several robots can be in the same cell at the same time.
+		\item Each cell is either clean or dirty.
+		\item Each robot has a battery with 20 charge levels
+	\end{itemize}
+	The whole state space will be of the following size:
+	\[5^{100}*20^{5}*2^{100} = 2^{5}*10^{105} = 32*10^{105} \]
+	Creating the whole state space will take
+	\[32*10^{105}*10^{-6}s = 32*10^{99} s = 1.014*10^{93} years\]
+	Which is far bigger than the age of the universe.
+	
+	
+	\section*{Exercise 1.3 - Planning literature}
+	The questions that we will like to discuss during the course of the lecture are the following:
+	\begin{enumerate}
+		\item How can we generate an heuristic function of a planning task?
+		\item During the article it was mentioned that the current model-based approaches like SAT may spend a lot of time solving problems with a big state space size. How does the recent development \textbf{SAT-based planning} overcomes this issue? Will this type of planner be included in the lecture?
+		\item Is there any other model-based approach besides SAT that combined with heuristic functions performs equal or better than SAT-based planning?
+		\item If not, why is SAT combined with heuristics instead of other model-based approaches?
+		\item Additionally from Torchlight, has there been any new advances on the field of automatically generating an optimal heuristic function?
+		\item Is LM-cut heuristic still the state of the art in planners? Will this topic be covered in the course?
+	\end{enumerate}
+
+	
+\end{document}
