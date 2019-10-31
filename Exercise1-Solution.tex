@@ -6,12 +6,33 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 
+\title{\textbf{Principles of AI Planning
+\\{\Large Exercise Sheet 1}}}
+\date{1.11.2019}
+
+\makeatletter
+\renewcommand{\@maketitle}
+{
+\newpage
+ \null
+ \vskip 2em%
+ \begin{center}%
+  {\LARGE \@title \\ \par}%
+ \end{center}%
+ \par
+ } \makeatother
+
 \begin{document}
 	\begin{flushleft}
-		Authors: \hfill 30.10.2019\\
+		Authors:\\
 		Erick Rosete Beas | er165@uni-freiburg.de\\
 		Jessica Lizeth Borja Diaz | jb986@uni-freiburg.de\\
 	\end{flushleft}
+	{\let\newpage\relax\maketitle}
+	\begin{center} 
+		\large 1.11.2019 
+	\end{center}
+	
 	\section*{Exercise 1.2 - State Space Size}
 	The goal is to measure the time required to generate the whole state space if every state generation if generating one state
 	take $1x10^{-6} s$.\\\\
@@ -24,7 +45,11 @@
 		\item Each robot has a battery with 20 charge levels
 	\end{itemize}
 	The whole state space will be of the following size:
-	\[100^{5}*20^{5}*2^{100} = 4.056*10^{46}\]
+	\[
+		\underbrace{(100^{5})}_{\text{robot positions}}*
+		\underbrace{(20^{5})}_{\text{charging states}}*
+		\underbrace{(2^{100})}_{\text{cell state (clean or dirty)}} = 4.056*10^{46}
+	\]
 	Creating the whole state space will take
 	\[4.056*10^{46}*10^{-6}s = 4.056*10^{40} s = 1.286*10^{33} years\]
 	Which is far bigger than the age of the universe.
