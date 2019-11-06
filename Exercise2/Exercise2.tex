@@ -1,0 +1,58 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{\textbf{Principles of AI Planning
+		\\{\Large Exercise Sheet 2}}}
+\date{6.11.2019}
+
+\makeatletter
+\renewcommand{\@maketitle}
+{
+	\newpage
+	\null
+	\vskip 2em%
+	\begin{center}%
+		{\LARGE \@title \\ \par}%
+	\end{center}%
+	\par
+} \makeatother
+
+\begin{document}
+	\begin{flushleft}
+		Authors:\\
+		Erick Rosete Beas | er165@uni-freiburg.de\\
+		Jessica Lizeth Borja Diaz | jb986@uni-freiburg.de\\
+	\end{flushleft}
+	{\let\newpage\relax\maketitle}
+	\begin{center} 
+		\large 6.11.2019 
+	\end{center}
+
+	\section*{Exercise 2.1 - Effect Normal Form}
+	\textbf{a) Transform the operator into ENF}\\
+	\[\ \langle\neg e \lor f, (a \triangleright (b \triangleright c))  \land (\neg d \triangleright c) \land (\neg(\neg c \land \neg a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]	
+	De Morgan's Law
+	\[\ \langle\neg e \lor f, (a \triangleright (b \triangleright c))  \land (\neg d \triangleright c) \land ((c \lor a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]
+	(7)
+	\[\ \langle\neg e \lor f, ((a \land b) \triangleright c))  \land (\neg d \triangleright c) \land ((c \lor a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]
+	(9)
+	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]
+	(8)
+	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a) \triangleright \neg e) \land (d \triangleright \neg e) \rangle \]
+	(9)
+	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \neg e) \rangle \]\\
+	\textbf{b) Transform the operator into positive normal form}\\
+	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \neg e) \rangle \]
+	We identify the negative atom $\neg e$ and we change it for $\hat{e}$ in preconditions and effects as it is not used in any other condition.
+	\[\ \langle \hat{e} \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \hat{e}) \rangle \]
+	We identify the negative atom $\neg d$ and we change it for $\hat{d}$ in preconditions.
+	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \hat{e}) \rangle \]
+	We change effect $d$ for $d \land \neg \hat{d}$
+	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright (d \land \neg\hat{d})) \land ((c \lor a \lor d) \triangleright \hat{e}) \rangle \]
+	(8)
+	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a) \triangleright \neg\hat{d}) \land ((c \lor a \lor d) \triangleright \hat{e}) \rangle \]
+\end{document}
