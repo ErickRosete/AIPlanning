@@ -1,0 +1,12 @@
+﻿(define (problem example)
+    (:domain SetCover)
+    (:objects S1 S2 S3 S4 S5 - set 
+              e1 e2 e3 e4 - elem)
+    (:init  (contains S1 e1)
+            (contains S2 e2) (contains S2 e3)
+            (contains S3 e4)
+            (contains S4 e1) (contains S4 e2)
+            (contains S5 e3) (contains S5 e4)
+    )
+    (:goal (and (covered e1) (covered e2) (covered e3) (covered e4)))
+)
