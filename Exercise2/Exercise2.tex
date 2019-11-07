@@ -1,9 +1,16 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{amsmath,multicol}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+
+\usepackage[%
+    left=1.0in,%
+    right=1.0in,%
+    top=0.8in,%
+    bottom=1.0in,%
+]{geometry}%
 
 \title{\textbf{Principles of AI Planning
 		\\{\Large Exercise Sheet 2}}}
@@ -33,31 +40,120 @@
 	\end{center}
 
 	\section*{Exercise 2.1 - Effect Normal Form}
-	\textbf{a) Transform the operator into ENF}\\
-	\[\ \langle\neg e \lor f, (a \triangleright (b \triangleright c))  \land (\neg d \triangleright c) \land (\neg(\neg c \land \neg a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]	
+	\textbf{a) Transform the operator into ENF}
+	
+	\begin{align*} 
+		\langle\neg e \lor f,
+		\\ (a \triangleright (b \triangleright c)) \land
+		\\ (\neg d \triangleright c) \land
+		\\ (\neg(\neg c \land \neg a) \triangleright (d \land \neg e)) \land 
+		\\ (d \triangleright \neg e) \rangle 
+	\end{align*} 
+
+\hfill\break
+\setlength{\columnsep}{50pt}
+\begin{multicols}{2}
 	De Morgan's Law
-	\[\ \langle\neg e \lor f, (a \triangleright (b \triangleright c))  \land (\neg d \triangleright c) \land ((c \lor a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]
+	\begin{align*} 
+		\langle\neg e \lor f, 
+		\\ (a \triangleright (b \triangleright c))  \land 
+		\\ (\neg d \triangleright c) \land 
+		\\ ((c \lor a) \triangleright (d \land \neg e)) \land 
+		\\ (d \triangleright \neg e) \rangle
+	\end{align*} 
+
 	(7)
-	\[\ \langle\neg e \lor f, ((a \land b) \triangleright c))  \land (\neg d \triangleright c) \land ((c \lor a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]
+	\begin{align*} 
+		\langle\neg e \lor f, 
+		\\ ((a \land b) \triangleright c))  \land 
+		\\ (\neg d \triangleright c) \land 
+		\\ ((c \lor a) \triangleright (d \land \neg e)) \land 
+		\\ (d \triangleright \neg e) \rangle
+	\end{align*} 
+	
 	(9)
-	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright (d \land \neg e)) \land (d \triangleright \neg e) \rangle \]
+	\begin{align*} 
+		\langle\neg e \lor f, 
+		\\ ((a \land b \lor \neg d) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright (d \land \neg e)) \land 
+		\\ (d \triangleright \neg e) \rangle
+	\end{align*} 
+	
 	(8)
-	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a) \triangleright \neg e) \land (d \triangleright \neg e) \rangle \]
+	\begin{align*} 
+		\langle\neg e \lor f,
+		\\ ((a \land b \lor \neg d) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\((c \lor a) \triangleright \neg e) \land 
+		\\(d \triangleright \neg e) \rangle
+	\end{align*} 
+
 	(9)
-	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \neg e) \rangle \]\\
-	\textbf{b) Transform the operator into positive normal form}\\
-	\[\ \langle\neg e \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \neg e) \rangle \]
-	We identify the negative atom $\neg e$ and we change it for $\hat{e}$
-	\[\ \langle \hat{e} \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright \neg e) \rangle \]
+	\begin{align*} 
+		\langle\neg e \lor f, 
+		\\ ((a \land b \lor \neg d) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a \lor d) \triangleright \neg e) \rangle
+	\end{align*}
+\end{multicols}
+
+	\hfill\break
+	\textbf{b) Transform the operator into positive normal form}
+	\begin{align*} 
+		\langle\neg e \lor f, 
+		\\ ((a \land b \lor \neg d) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a \lor d) \triangleright \neg e) \rangle
+	\end{align*} 
+
+\hfill\break
+\setlength{\columnsep}{50pt}
+\begin{multicols}{2}
+\noindent First we identify the negative atom $\neg e$ and we change it for $\hat{e}$
+	\begin{align*} 
+		\langle \hat{e} \lor f, 
+		\\ ((a \land b \lor \neg d) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a \lor d) \triangleright \neg e) \rangle
+	\end{align*} 
 	We change effect $\neg e$ for $\neg{e} \land \hat{e}$
-	\[\ \langle \hat{e} \lor f, ((a \land b \lor \neg d) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle \]
+	\begin{align*} 
+		\langle \hat{e} \lor f, 
+		\\ ((a \land b \lor \neg d) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle
+	\end{align*} 
 	We identify the negative atom $\neg d$ and we change it for $\hat{d}$.
-	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle \]
+	\begin{align*} 
+		\langle \hat{e} \lor f, 
+		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle
+	\end{align*} 
 	We change effect $d$ for $d \land \neg \hat{d}$
-	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright (d \land \neg \hat{d})) \land ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle \]
+	\begin{align*} 
+		\langle \hat{e} \lor f, 
+		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright (d \land \neg \hat{d})) \land 
+		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle
+	\end{align*} 		
 	(8)
-	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a) \triangleright \neg\hat{d}) \land ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e}) \rangle \]
+	\begin{align*} 
+		\langle \hat{e} \lor f, 
+		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a) \triangleright \neg\hat{d}) \land 
+		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e}) \rangle
+	\end{align*} 
 	(8)
-	\[\ \langle \hat{e} \lor f, ((a \land b \lor \hat{d}) \triangleright c) \land ((c \lor a) \triangleright d) \land ((c \lor a) \triangleright \neg\hat{d}) \land ((c \lor a \lor d) \triangleright \neg{e}) \land ((c \lor a \lor d) \triangleright \hat{e}) \rangle \]
+	\begin{align*} 
+		\langle \hat{e} \lor f, 
+		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
+		\\ ((c \lor a) \triangleright d) \land 
+		\\ ((c \lor a) \triangleright \neg\hat{d}) \land 
+		\\ ((c \lor a \lor d) \triangleright \neg{e}) \land 
+		\\ ((c \lor a \lor d) \triangleright \hat{e}) \rangle
+	\end{align*} 
+\end{multicols}
 
 \end{document}
