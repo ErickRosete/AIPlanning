@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
 \usepackage[%
     left=1.0in,%
@@ -156,4 +157,17 @@
 	\end{align*} 
 \end{multicols}
 
+\section{Exercise 2.2 - PDDL set cover}
+
+\begin{enumerate}[label=\alph*.,start=3]
+	\item With the integrated planner the sets selected are $S1, S2, S3$, 
+		this is a satisficing plan, however not optimal. In contrast the 
+		custom planner selects the sets $S4,S5$ which corresponds to the optimal plan.
+	\item Arbitrary set cover selects multiple sets to entirely cover the universe set, 
+		but it does not check if it is the optimal plan although it satisfies the goal,
+		making it a satisficing plan approach. On the other hand, cardinality minimal set cover
+		refers to selecting the minimal amount of sets to cover the entire universe,
+		this is what an optimal plan does. If no set combination exists such that the 
+		whole universe is covered by its elements, there cannot be a plan.
+\end{enumerate}
 \end{document}
