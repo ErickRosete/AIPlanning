@@ -78,22 +78,22 @@
   \node [env] {$\gamma = a \land d$}
 	child { node [env] {$a$}
 			child { node [sub,  label=right: \small{Stop exploring, duplicate}] {$a$}
-					edge from parent node [above] {$regr_{O_3}$} 
+					edge from parent node [above] {$regr_{o_3}$} 
 			}
 			child { node [end, label=right:\small{This represents an allowed initial state}] {$b$}
-					edge from parent node [above] {$regr_{O_2}$}
+					edge from parent node [above] {$regr_{o_2}$}
 			}
 			child { node [sub, label=right: 
 					\small{Stop exploring, $regr_{o_1}(a)$ is subset of a}] {$b \land d \land a $}
-					edge from parent node [above] {$regr_{O_1}$}
+					edge from parent node [above] {$regr_{o_1}$}
 			}
-		edge from parent node [above] {$regr_{O_3}$}
+		edge from parent node [above] {$regr_{o_3}$}
 	}
 	child { node [env] {$\bot$}
-		edge from parent node [above] {$regr_{O_3}$} 
+		edge from parent node [above] {$regr_{o_2}$} 
 	}
 	child { node [env] {$\bot$}
-		edge from parent node [above] {$regr_{O_1}$} 
+		edge from parent node [above] {$regr_{o_1}$} 
 	};
     
 \end{tikzpicture}
