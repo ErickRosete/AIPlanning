@@ -5,6 +5,10 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{sectsty}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
 
 \usepackage[%
     left=1.0in,%
@@ -13,9 +17,10 @@
     bottom=1.0in,%
 ]{geometry}%
 
+\sectionfont{\fontsize{14.4}{12}\selectfont}
 \title{\textbf{Principles of AI Planning
-		\\{\Large Exercise Sheet 2}}}
-\date{6.11.2019}
+		\\{\Large Exercise Sheet 3}}}
+\date{15.11.2019}
 
 \makeatletter
 \renewcommand{\@maketitle}
@@ -29,6 +34,7 @@
 	\par
 } \makeatother
 
+
 \begin{document}
 	\begin{flushleft}
 		Authors:\\
@@ -40,134 +46,80 @@
 		\large 6.11.2019 
 	\end{center}
 
-	\section*{Exercise 2.1 - Effect Normal Form}
-	\textbf{a) Transform the operator into ENF}
-	
-	\begin{align*} 
-		\langle\neg e \lor f,
-		\\ (a \triangleright (b \triangleright c)) \land
-		\\ (\neg d \triangleright c) \land
-		\\ (\neg(\neg c \land \neg a) \triangleright (d \land \neg e)) \land 
-		\\ (d \triangleright \neg e) \rangle 
-	\end{align*} 
-
 \hfill\break
-\setlength{\columnsep}{50pt}
-\begin{multicols}{2}
-	De Morgan's Law
-	\begin{align*} 
-		\langle\neg e \lor f, 
-		\\ (a \triangleright (b \triangleright c))  \land 
-		\\ (\neg d \triangleright c) \land 
-		\\ ((c \lor a) \triangleright (d \land \neg e)) \land 
-		\\ (d \triangleright \neg e) \rangle
-	\end{align*} 
-
-	(7)
-	\begin{align*} 
-		\langle\neg e \lor f, 
-		\\ ((a \land b) \triangleright c))  \land 
-		\\ (\neg d \triangleright c) \land 
-		\\ ((c \lor a) \triangleright (d \land \neg e)) \land 
-		\\ (d \triangleright \neg e) \rangle
-	\end{align*} 
-	
-	(9)
-	\begin{align*} 
-		\langle\neg e \lor f, 
-		\\ ((a \land b \lor \neg d) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright (d \land \neg e)) \land 
-		\\ (d \triangleright \neg e) \rangle
-	\end{align*} 
-	
-	(8)
-	\begin{align*} 
-		\langle\neg e \lor f,
-		\\ ((a \land b \lor \neg d) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\((c \lor a) \triangleright \neg e) \land 
-		\\(d \triangleright \neg e) \rangle
-	\end{align*} 
-
-	(9)
-	\begin{align*} 
-		\langle\neg e \lor f, 
-		\\ ((a \land b \lor \neg d) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a \lor d) \triangleright \neg e) \rangle
-	\end{align*}
-\end{multicols}
-
-	\hfill\break
-	\textbf{b) Transform the operator into positive normal form}
-	\begin{align*} 
-		\langle\neg e \lor f, 
-		\\ ((a \land b \lor \neg d) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a \lor d) \triangleright \neg e) \rangle
-	\end{align*} 
-
+\section*{Exercise 3.1: STRIPS Regression}
+	\textbf{a) Consider the STRIPS planning tasks with:}
+	\begin{flalign*}
+	 	 & A=\{a,b,c,d,e\}
+		\\ & I=\{a\mapsto 0, b\mapsto 1 , c\mapsto 0, d\mapsto 1,e\mapsto 1 \}
+		\\ & \gamma = a \land d
+		\\ & O =\{o_1, o_2, o_3\}
+		\\ & o_1=\langle b\land d, c\land e \land \neg d \rangle
+		\\ & o_2=\langle b, a\land \neg c \land \neg d \rangle
+		\\ & o_3=\langle a, d \rangle
+	\end{flalign*} 
+	Solve this problem with a breadth-first search using the STRIPS regression method.
 \hfill\break
-\setlength{\columnsep}{50pt}
-\begin{multicols}{2}
-\noindent First we identify the negative atom $\neg e$ and we change it for $\hat{e}$
-	\begin{align*} 
-		\langle \hat{e} \lor f, 
-		\\ ((a \land b \lor \neg d) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a \lor d) \triangleright \neg e) \rangle
-	\end{align*} 
-	We change effect $\neg e$ for $\neg{e} \land \hat{e}$
-	\begin{align*} 
-		\langle \hat{e} \lor f, 
-		\\ ((a \land b \lor \neg d) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle
-	\end{align*} 
-	We identify the negative atom $\neg d$ and we change it for $\hat{d}$.
-	\begin{align*} 
-		\langle \hat{e} \lor f, 
-		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle
-	\end{align*} 
-	We change effect $d$ for $d \land \neg \hat{d}$
-	\begin{align*} 
-		\langle \hat{e} \lor f, 
-		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright (d \land \neg \hat{d})) \land 
-		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e})) \rangle
-	\end{align*} 		
-	(8)
-	\begin{align*} 
-		\langle \hat{e} \lor f, 
-		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a) \triangleright \neg\hat{d}) \land 
-		\\ ((c \lor a \lor d) \triangleright (\neg{e} \land \hat{e}) \rangle
-	\end{align*} 
-	(8)
-	\begin{align*} 
-		\langle \hat{e} \lor f, 
-		\\ ((a \land b \lor \hat{d}) \triangleright c) \land 
-		\\ ((c \lor a) \triangleright d) \land 
-		\\ ((c \lor a) \triangleright \neg\hat{d}) \land 
-		\\ ((c \lor a \lor d) \triangleright \neg{e}) \land 
-		\\ ((c \lor a \lor d) \triangleright \hat{e}) \rangle
-	\end{align*} 
-\end{multicols}
+\tikzset{
+  treenode/.style = {align=left,text centered},
+  env/.style      = {treenode, font=\large},
+  sub/.style      = {treenode, font=\normalsize},
+  end/.style      = {treenode, font=\normalsize, circle, draw=green},
+}
+\begin{tikzpicture}
+  [
+    grow                    = right,
+    sibling distance        = 5em,
+    level distance          = 9em,
+    edge from parent/.style = {draw, latex-},
+    every node/.style       = {font=\normalsize},
+    sloped
+  ]
+  \node [env] {$\gamma = a \land d$}
+	child { node [env] {$a$}
+			child { node [sub,  label=right: \small{Stop exploring, duplicate}] {$a$}
+					edge from parent node [above] {$regr_{O_3}$} 
+			}
+			child { node [end, label=right:\small{This represents an allowed initial state}] {$b$}
+					edge from parent node [above] {$regr_{O_2}$}
+			}
+			child { node [sub, label=right: 
+					\small{Stop exploring, $regr_{o_1}(a)$ is subset of a}] {$b \land d \land a $}
+					edge from parent node [above] {$regr_{O_1}$}
+			}
+		edge from parent node [above] {$regr_{O_3}$}
+	}
+	child { node [env] {$\bot$}
+		edge from parent node [above] {$regr_{O_3}$} 
+	}
+	child { node [env] {$\bot$}
+		edge from parent node [above] {$regr_{O_1}$} 
+	};
+    
+\end{tikzpicture}
 
-\section{Exercise 2.2 - PDDL set cover}
+\newpage
+\section*{Exercise 3.2: Problem modeling}
+The plan obtained by the custom planner with the PDDL program was the following:
+\begin{center}
+	\begin{tabular}{l}
+	(move $g$ $b$)\\
+	(sample-rock $b$ $r_1$)\\
+	(move $b$ $c$)\\
+	(sample-rock $c$ $r_2$)\\
+	(move $c$ $d$)\\
+	(sample-rock $d$ $r_3$)\\
+	(move $d$ $e$)\\
+	(sample-rock $e$ $r_4$)\\
+	(move $e$ $g$)\\
+	(move $g$ $f$)\\
+	(move $f$ $a$)\\
+	(transmit-data $a$ $r_4$)\\
+	(transmit-data $a$ $r_3$)\\
+	(transmit-data $a$ $r_2$)\\
+	(transmit-data $a$ $r_1$)\\
+	\end{tabular}
+\end{center}
+We can notice the obtained plan with the custom planner is optimal as it satisfies the problem conditions with the least cost.
 
-\begin{enumerate}[label=\alph*.,start=3]
-	\item With the integrated planner the sets selected are $S1, S2, S3$, 
-		this is a satisficing plan, however not optimal. In contrast the 
-		custom planner selects the sets $S4,S5$ which corresponds to the optimal plan.
-	\item Arbitrary set cover selects multiple sets to entirely cover the universe set, 
-		but it does not check if it is the optimal plan although it satisfies the goal,
-		making it a satisficing plan approach. On the other hand, cardinality minimal set cover
-		refers to selecting the minimal amount of sets to cover the entire universe,
-		this is what an optimal plan does. If no set combination exists such that the 
-		whole universe is covered by its elements, there cannot be a plan.
-\end{enumerate}
 \end{document}
