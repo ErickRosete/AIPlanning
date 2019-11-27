@@ -1,0 +1,203 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,enumitem,amsfonts,amssymb,graphicx}
+\usepackage{multicol}
+\usepackage{sectsty}
+\usepackage{commath}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+
+\usetikzlibrary{trees}
+
+\usepackage[%
+    left=1.0in,%
+    right=1.0in,%
+    top=0.8in,%
+    bottom=1.0in,%
+]{geometry}%
+
+\sectionfont{\fontsize{14.4}{12}\selectfont}
+\title{\textbf{Principles of AI Planning
+		\\{\Large Exercise Sheet 4}}}
+\date{22.11.2019}
+
+\makeatletter
+\renewcommand{\@maketitle}
+{
+	\newpage
+	\null
+	\vskip 2em%
+	\begin{center}%
+		{\LARGE \@title \\ \par}%
+	\end{center}%
+	\par
+} \makeatother
+
+
+\begin{document}
+	\begin{flushleft}
+		Authors:\\
+		Erick Rosete Beas | er165@uni-freiburg.de\\
+		Jessica Lizeth Borja Diaz | jb986@uni-freiburg.de\\
+	\end{flushleft}
+	{\let\newpage\relax\maketitle}
+	\begin{center} 
+		\large 22.11.2019 
+	\end{center}
+
+\hfill\break
+\section*{Exercise 4.1: Example for general regression}
+	\textbf{a) Consider the STRIPS planning tasks, Solve this problem with a breadth-first search.}
+	\\for simplicity we call the atoms the following way:
+
+\begin{multicols}{2}
+	\begin{center}
+		\begin{tabular}{ c|c }
+		atoms & name \\
+		\hline
+		juliet-dancing & jd \\
+		juliet-at-home & jh \\    
+		romeo-at-home & rh \\   
+		romeo-dancing & rd \\
+		romeo-at-work & rw \\ 
+		\end{tabular}
+	\end{center}
+
+	\begin{flalign*}
+	 	 & A=\{romeo,juliet\}
+		\\ & I=\{rh\mapsto 1, jh \mapsto 1 \}
+		\\ & \gamma = jd \land rh
+		\\ & O =\{o_1, o_2, o_3\}
+	\end{flalign*} 
+\end{multicols}{}
+
+\hfill\break
+\begin{center}
+	\begin{tabular}{ c | c }
+	 	Go-work: &
+		$ o_1= \langle rh, rw \land \neg rh \rangle $ \\[1em]
+		\hline
+		Go-home: &
+		$ o_2= \langle rw, rh \land \neg rw \rangle $ \\[1em]
+		\hline
+		Go-dancing: &
+		$ o_3= \langle jh, jd \land \neg jh \land 
+				(rh \triangleright (rd \land \neg rh) )\rangle $'
+	\end{tabular}{}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%% Regression equations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Operations: }
+
+\begin{equation*}
+	\begin {split}
+	regr_{o_3}(jd \land rh) = jh \land (\top \lor ( jd \land \neg \bot))\\
+					\land (\bot \lor ( rh \land \neg rh))\\
+					= jh \land \top \land \bot = \bot\\
+	\end {split}
+\end{equation*}
+\[	regr_{o_2} (jd \land rh)= rw \land jd \]
+\begin{equation*}
+	\begin {split}
+	regr_{o_3}(rw \land jd) = jh \land (\top \lor ( jd \land \neg \bot))\\
+							\land (\bot \lor ( rw \land \neg \bot))\\
+							= jh \land rw
+	\end {split}
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%% Tree %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hfill\break
+\begin{center}
+	\tikzset{
+		treenode/.style = {align=left,text centered},
+		env/.style      = {treenode, font=\large},
+		sub/.style      = {treenode, font=\normalsize},
+		accepted/.style      = {treenode, font=\normalsize, circle, draw=green},
+		}
+	\begin{tikzpicture}
+		[	sloped,
+			sibling distance        = 5em,
+			level distance          = 8em,
+			grow=right,
+			edge from parent/.style = {draw, semithick, <-},
+			edge from parent path=
+			{(\tikzparentnode) -- (\tikzchildnode.west)}
+		]
+	\node [] {$jd \land rh$}
+		child{
+			node[label=below: \small{makes $rh$ false}]
+			{$ \bot $}    
+			edge from parent node[above] {$o_1$}
+		}
+		child{
+			node []{$ rw \land jd $}
+			child {
+				node [sub,  label=right: 
+				\small{Stop exploring, duplicate}] 
+				{$rh \land jd$}
+				edge from parent node [above] {$o_1$} 
+			}
+			child {
+				node [sub,  label=below: 
+				\small{makes $rw$ false}] 
+				{$\bot$}
+				edge from parent node [above] {$o_2$} 
+			}
+			child {
+				node [sub] 
+				{$ jh \land rw $}
+					child {
+						node [accepted,  label=right: 
+						\small{goal state}] 
+						{$jd \land rh$}
+						edge from parent node [above] {$o_1$} 
+					}
+					child {
+						node [sub,  label=right: 
+						\small{makes $rw$ false}] 
+						{$\bot$}
+						edge from parent node [above] {$o_2$} 
+					}
+					child {
+						node [sub,  label=right: 
+						\small{makes $jh$ false}] 
+						{$\bot$}
+						edge from parent node [above] {$o_3$} 
+					}
+				edge from parent node [above] {$o_3$} 
+			}
+			edge from parent node[above] {$o_2$}
+		}
+		child{
+			node[] {$\bot$} 
+			edge from parent node[above]{$o_3$}
+		};
+	\end{tikzpicture}
+\end{center}
+Then the plan would be : $o_1, o_3, o_2$. This means: romeo goes to work, 
+then juliet goes dancing but as romeo is at ``work"
+he cannot go, finaly romeo returns happily to home.
+%%%%%%%%%%%%%%%%%%%%%% Exercise 4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Exercise 4.2 (Exponential plan length)}
+Show that for all $n \in N $ there is a conditional effect free planning task $\prod = \langle A, I, O, \gamma \rangle$ with $\abs{A} = \abs{O} = O(n)$ such that $ \abs{\pi} = O(2^{\abs{n}})$ where $\abs{\pi}$ is the length of a plan.\\\\
+To prove it we will construct a planning task that works $\forall n \in N$, the task will be modeled as a binary counter, this counter will start in $0$ and go to $2^n - 1$, and as we know in a binary counter you must pass from every state until reaching the goal state, therefore the optimal plan will have a length $\pi = 2^n$.\\
+\[A = \lbrace A_i, A_{i-1}, ..., A_1, A_0 \rbrace\]  
+Where $A_i$ is the most significant bit, and $A_0$ is the least significant bit.\\
+\[I = \lbrace A_i \mapsto 0, A_{i-1} \mapsto 0, ..., A_1 \mapsto 0, A_0 \mapsto 0 \rbrace\]  
+The counter initial state starts with all bits in 0.
+\[\gamma = \lbrace A_i \mapsto 1, A_{i-1} \mapsto 1, ..., A_1 \mapsto 1, A_0 \mapsto 1 \rbrace\] 
+The goal will be all bits set to 1 as this represents the number $2^n - 1$.\\
+
+\[O = \lbrace O_0, O_1, ..., O_{i-1}, O_{i} \rbrace \]
+\[O_0 = \langle \neg A_0, A_0\rangle \]
+\[O_1 = \langle \neg A_1 \land A_0, A_1 \land \neg A_0 \rangle \]
+\[O_2 = \langle \neg A_2 \land A_1 \land A_0, A_2 \land \neg A_1 \land \neg A_0 \rangle \]
+\begin{center}
+	...
+\end{center}
+\[O_i = \langle \neg A_i \land A_{i-1} \land ... \land A_1 \land A_0, A_i\land \neg A_{i-1} \land ... \land \neg A_1 \land \neg A_0 \rangle \]
+The operators are the same size as the amount of variables and don't have conditional effects, which satisfies the problems conditions.
+Furthermore the operators flip all bits to the right to 0, and change the current bit to 1, which is what happens in a normal binary counter.\\
+Describing the solution is similar to describing a recursive solution, we know that to set $A_j$ to 1 we must use the operator $O_j$, then when $A_j$ is turned to 1, the atoms/bits to the right are set to 0, and they must be set to 1 to reach the goal, to do these we must repeat the previous operators sequence, when they are all set to 1, then, $O_{j+1}$ is the only operator than can be used and again all bits to the right are empty and we must repeat this process until setting all atoms to 1 and reaching the goal. Therefore this task work as the desired binary counter, always having an exponential length to reach the goal $\forall n \in N$. Q.E.D.
+
+\end{document}

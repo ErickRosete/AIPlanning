@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  7 NOV 2019 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  21 NOV 2019 18:09
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/GoogleDrive/Semestre1/AIPlanning/Exercise2/Exercise2
-(d:/GoogleDrive/Semestre1/AIPlanning/Exercise2/Exercise2.tex
+**"d:/GoogleDrive/Semestre1/Principles of AI Planning/AIPlanning/Exercise2/Exercise2"
+(d:/GoogleDrive/Semestre1/Principles of AI Planning/AIPlanning/Exercise2/Exercise2.tex
 LaTeX2e <2019-10-01> patch level 1
 (d:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
@@ -303,12 +303,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--113
 [2] (./Exercise2.aux) ) 
 Here is how much of TeX's memory you used:
  3553 strings out of 492167
- 48082 string characters out of 6129158
+ 48162 string characters out of 6129158
  144332 words of memory out of 5000000
  7869 multiletter control sequences out of 15000+600000
  10102 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,9n,30p,318b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,9n,30p,346b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
 <d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Output written on Exercise2.pdf (2 pages, 52853 bytes).
 PDF statistics:
