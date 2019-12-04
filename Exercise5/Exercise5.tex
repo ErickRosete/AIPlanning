@@ -46,10 +46,12 @@
 \hfill\break
 \section*{Exercise 5.1: A* search}
 	\textbf{a) Solve the puzzle with the A* algorithms}\\
+	Using the heuristic as a tie breaker, favoring lower h values,
+	we get the following tree.
+	Where we find the optimal solution as the heuristic is admissible and
+	because every other f value in the heap is bigger or equal to five.
 	\begin{center}
 		\includegraphics[scale=0.4]{A_star_0.jpg}\\
-		\includegraphics[scale=0.4]{A_star_1.jpg}\\
-		\includegraphics[scale=0.4]{A_star_2.jpg}\\
 	\end{center}
 	\textbf{b) show that h is admissible}
 	\begin{addmargin}[1em]{1em}% 1em left, 2em right

@@ -1,33 +1,206 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
+\usepackage{amsmath,enumitem,amsfonts,amssymb,graphicx,commath}
 \usepackage[width=18.00cm, height=25.00cm]{geometry}
+\usepackage{sectsty}
+
+\sectionfont
+{\fontsize{14.4}{12}\selectfont}
+\title{\textbf{Principles of AI Planning
+		\\{\Large Exercise Sheet 6}}}
+\date{06.12.2019}
+
+\makeatletter
+\renewcommand{\@maketitle}
+{
+	\newpage
+	\null
+	\vskip 2em%
+	\begin{center}%
+		{\LARGE \@title \\ \par}%
+	\end{center}%
+	\par
+} \makeatother
+
 \begin{document}
+\begin{flushleft}
+	Authors:\\
+	Erick Rosete Beas | er165@uni-freiburg.de\\
+	Jessica Lizeth Borja Diaz | jb986@uni-freiburg.de\\
+\end{flushleft}
+{\let\newpage\relax\maketitle}
+\begin{center} 
+	\large 06.12.2019 
+\end{center}
+
 	\section*{Exercise Sheet 6}
 	\subsection*{Exercise 6.1 - Delete Relaxation}
-	a) Give the relaxation $\Pi^+$ of $\Pi$
-	\[A = \lbrace haveCake, eatenCake, haveNoCake \rbrace \]
-	\[I = \lbrace haveCake \rightarrow 0, eatenCake \rightarrow 0, haveNoCake \rightarrow 1 \rbrace \]
-	\[ O^+ = \lbrace eatCake, bakeCake \rbrace \]
-	\[eatCake^+ = \langle  haveCake, haveNoCake \land eatenCake \rangle \]
-	\[bakeCake^+ = \langle  haveNoCake, haveCake \rangle \]
-	\[\gamma = haveCake \land eatenCake \]
+	\begin{enumerate}[label=(\alph*)]
+		\item \textbf{Give the relaxation $\Pi^+$ of $\Pi$}
+		
+		\begin{center}
+			\begin{tabular}{l}
+				$A = \lbrace haveCake, eatenCake, haveNoCake \rbrace $ \\
+				$I = \lbrace haveCake \rightarrow 0, eatenCake \rightarrow 0, haveNoCake \rightarrow 1 \rbrace $ \\
+				$ O^+ = \lbrace eatCake^+, bakeCake^+ \rbrace $ \\
+				$eatCake^+ = \langle  haveCake, haveNoCake \land eatenCake \rangle $\\
+				$bakeCake^+ = \langle  haveNoCake, haveCake \rangle $\\
+				$\gamma = haveCake \land eatenCake $
+			\end{tabular}
+		\end{center}
 	The negative effects of the operators were removed.\\\\
-	b) Give a sequence of $\pi$ of operators (as short as possible) from O such that $\pi$ is not a plan of $\Pi$ but $\pi^+$ is a plan of $\Pi^+$.\\
-	\[ \pi^+ = bakeCake^+, eatCake^+ \]
-	Why? We can simulate this plan in both planning tasks to demonstrate it.\\
-	States after $bakeCake^+$ 	
-	\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 0, haveNoCake \rightarrow 1 \rbrace \]
-	States after $eatCake^+$ 	
-	\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 1, haveNoCake \rightarrow 1 \rbrace \]
-	Goal accomplished. \\\\
-	If we run the same plan $\pi$ in $\Pi$\\
-	States after $bakeCake$ 	
-	\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 0, haveNoCake \rightarrow 0 \rbrace \]
-	States after $eatCake$ 	
-	\[S_1 = \lbrace haveCake \rightarrow 0, eatenCake \rightarrow 1, haveNoCake \rightarrow 1 \rbrace \]
-	Goal is not accomplished as we don't have cake.
+	
+	\item \textbf{Give a sequence of $\pi$ of operators (as short as possible) from O such that $\pi$ is not a plan of $\Pi$ but $\pi^+$ is a plan of $\Pi^+$.}\\
+		\[ \pi^+ = bakeCake^+, eatCake^+ \]
+		Why? We can simulate this plan in both planning tasks to demonstrate it.\\
+		States after $bakeCake^+$ 	
+		\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 0, haveNoCake \rightarrow 1 \rbrace \]
+		States after $eatCake^+$ 	
+		\[S_2 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 1, haveNoCake \rightarrow 1 \rbrace \]
+		Goal accomplished. \\\\
+		On the other hand, if we run the same plan $\pi$ in $\Pi$\\
+		States after $bakeCake$ 	
+		\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 0, haveNoCake \rightarrow 0 \rbrace \]
+		States after $eatCake$ 	
+		\[S_2 = \lbrace haveCake \rightarrow 0, eatenCake \rightarrow 1, haveNoCake \rightarrow 1 \rbrace \]
+		The goal is not accomplished as we don't have cake.
+	\end{enumerate}
+
+	\subsection*{Exercise 6.2 - $h^+$ heuristic}
+	before all we define the relaxed operator  $move^+$ where:
+	\[ 
+		move^+(t_m,p_{(i,j)},p_{(k,l)})=\langle 
+			at(t_m,p_{(i,j)}) \land empty(p_{(k,l)}),
+			at(t_m,p_{(k,l)}) \land empty(p_{(i,j)})
+			\rangle
+	\]
+	\begin{enumerate}[label=(\alph*), listparindent=1.5em]
+		\item \textbf{Show that $h^+(s) \geq h^{Mannhattan}(s)$ for 
+		each legal state s of a 15-puzzle planning task}\\
+			We know that $h^{Mannhattan}(s)$ is the sum of the
+			distances in $i$ and $j$ to reach the goal for each tile.
+			We also know that $h^+(s)$ is the minimum amount of operators
+			to reach the goal state in the relaxed planning task. \\
+			We 
+			notice that a tile can only move to an adjacent position, 
+			and that position must be empty. If a tile where to move
+			to the position it would occupy in the goal state,
+			assumming all the places it would have to move over
+			be empty then the number of operators required for
+			that tile to reach the desired position would 
+			be exactly the Mannhattan distance, if its not possible
+			to have a path such that the positions would be 
+			empty then we would require more movements or operators
+			to reach the goal state. This means that the total sum
+			of operators required to reach the goal state is greater
+			or equal than the sum of Mannhattan distance for each
+			operator.
+
+			\hfill\break
+			(Should we mathematically formalize this type of 
+			answers in the exam or an explanation like the one
+			above is sufficient proof?)
+
+			\hfill\break
+			We can try to formalize this by defining the operator: 
+			\[manhattanMove(tm, p_{(i,j)}, p_{(k,l)}) = \langle at(t_m, p_{(i,j)}), at(tm,p_{(k,l)})\rangle\]
+			\[\text{ where } (i = k \text{ and } \abs{j - l} = 1)  \text{ or }  (j = l \text{ and } \abs{i - k}= 1) \]
+
+			If we arrive to the goal by using these operators, then the optimal relaxed plan will be 
+			the manhattan distance, furthermore we can see that the \emph{manhattanMove} dominates $move^+$
+			as every plan step applicable in $move^+$ is also applicable in $manhattanMove$ as it doesn't
+			have the empty precondition, as $manhattanMove$ dominates $move^+$ then
+			$h^+(s) \geq h^{Mannhattan}(s)$
+
+
+		\item \textbf{Show that $h^+(s) > h^{Mannhattan}(s)$ for 
+		at least one state s of a 15-puzzle planning task}\\
+		Consider the following state s.
+		\begin{center}
+			\begin{tabular}{c||c|c|c|c|}
+				 i\textbackslash j & 0 & 1 & 2 & 3\\
+				\hline\hline
+				0 & $t_0$ & $t_1$ & $t_2$ & $t_3$ \\
+				\hline
+				1 & $t_4$ & $t_5$ & $t_6$ & $t_7$ \\
+				\hline
+				2 & $t_8$ & $t_9$ & $t_{10}$ & $t_{11}$ \\
+				\hline
+				3 & $t_{12}$ & $t_{14}$ & $t_{13}$ & $empty$ \\
+				\hline
+			\end{tabular}
+		\end{center}
+		To calculate the heuristic $h^+$ given 
+		the state s we first consider that
+		the only tiles that can move are $t_{11}$ and $t_{13}$.
+		$t_{11}$ is already in its desired position but
+		$t_{14}$ should be moved to $p_{(3,2)}$ and
+		the precondition to do so requires that position to
+		be empty first, then $t_{13}$ should move at least once
+		to reach the goal state. We start by applying
+		operator $move(t_{13}, p_{(2,3)}, p_{(3,3)})$ in the relaxed
+		planning task, this yields the following state:
+
+		\begin{center}
+			\begin{tabular}{c||c|c|c|c|}
+				 i\textbackslash j & 0 & 1 & 2 & 3\\
+				\hline\hline
+				0 & $t_0$ & $t_1$ & $t_2$ & $t_3$ \\
+				\hline
+				1 & $t_4$ & $t_5$ & $t_6$ & $t_7$ \\
+				\hline
+				2 & $t_8$ & $t_9$ & $t_{10}$ & $t_{11}$ \\
+				\hline
+				3 & $t_{12}$ & $t_{14}$ & $t_{13} \land empty $ &  $t_{13} \land empty $ \\
+				\hline
+			\end{tabular}
+		\end{center}
+
+		It is important to recognize that 
+		because of the relaxation an state can be in several places
+		at the time and that place can be ``empty" as well.
+		Now we can move $t_{14}$ to its goal position by 
+		applying operator $move(t_{14}, p_{(3,1)}, p_{(3,2)})$
+		as the preconditions are now satisfied. This yields the state:
+		
+		\begin{center}
+			\begin{tabular}{c||c|c|c|c|}
+				 i\textbackslash j & 0 & 1 & 2 & 3\\
+				\hline\hline
+				0 & $t_0$ & $t_1$ & $t_2$ & $t_3$ \\
+				\hline
+				1 & $t_4$ & $t_5$ & $t_6$ & $t_7$ \\
+				\hline
+				2 & $t_8$ & $t_9$ & $t_{10}$ & $t_{11}$ \\
+				\hline
+				3 & $t_{12}$ & $t_{14} \land empty$ & $t_{13} \land t_{14} \land empty$ &  $t_{13} \land empty $ \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		and as $t_{13}$ already \emph{is} in $p_{(3,2)}$ we can
+		simply move it to the desired position from there and
+		we reach the goal state in the relaxed planning task.
+		\begin{center}
+			\begin{tabular}{c||c|c|c|c|}
+				 i\textbackslash j & 0 & 1 & 2 & 3\\
+				\hline\hline
+				0 & $t_0$ & $t_1$ & $t_2$ & $t_3$ \\
+				\hline
+				1 & $t_4$ & $t_5$ & $t_6$ & $t_7$ \\
+				\hline
+				2 & $t_8$ & $t_9$ & $t_{10}$ & $t_{11}$ \\
+				\hline
+				3 & $t_{12}$ & $t_{13} \land t_{14} \land empty $ & $t_{13} \land t_{14} \land empty$ &  $t_{13} \land empty $ \\
+				\hline
+			\end{tabular}
+		\end{center}
+
+		Therefore for state s $h^+(s)=3$ as we applied only 3 operators.
+		However $h^{Mannhattan}$ would have estimated 2, because for 
+		$t_{14}$ the Mannhattan distance is: $\abs{3-3} + \abs{2-1}=1$,
+		and for $t_{13}$: $\abs{3-3} + \abs{1-2}=1$ thus $h^{Mannhattan}(s)=2$. 
+		Finally we can conclude that for this s $h^+(s) > h^{Mannhattan}(s)$
+	\end{enumerate}
+
 \end{document}
