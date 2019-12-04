@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[width=18.00cm, height=25.00cm]{geometry}
+\begin{document}
+	\section*{Exercise Sheet 6}
+	\subsection*{Exercise 6.1 - Delete Relaxation}
+	a) Give the relaxation $\Pi^+$ of $\Pi$
+	\[A = \lbrace haveCake, eatenCake, haveNoCake \rbrace \]
+	\[I = \lbrace haveCake \rightarrow 0, eatenCake \rightarrow 0, haveNoCake \rightarrow 1 \rbrace \]
+	\[ O^+ = \lbrace eatCake, bakeCake \rbrace \]
+	\[eatCake^+ = \langle  haveCake, haveNoCake \land eatenCake \rangle \]
+	\[bakeCake^+ = \langle  haveNoCake, haveCake \rangle \]
+	\[\gamma = haveCake \land eatenCake \]
+	The negative effects of the operators were removed.\\\\
+	b) Give a sequence of $\pi$ of operators (as short as possible) from O such that $\pi$ is not a plan of $\Pi$ but $\pi^+$ is a plan of $\Pi^+$.\\
+	\[ \pi^+ = bakeCake^+, eatCake^+ \]
+	Why? We can simulate this plan in both planning tasks to demonstrate it.\\
+	States after $bakeCake^+$ 	
+	\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 0, haveNoCake \rightarrow 1 \rbrace \]
+	States after $eatCake^+$ 	
+	\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 1, haveNoCake \rightarrow 1 \rbrace \]
+	Goal accomplished. \\\\
+	If we run the same plan $\pi$ in $\Pi$\\
+	States after $bakeCake$ 	
+	\[S_1 = \lbrace haveCake \rightarrow 1, eatenCake \rightarrow 0, haveNoCake \rightarrow 0 \rbrace \]
+	States after $eatCake$ 	
+	\[S_1 = \lbrace haveCake \rightarrow 0, eatenCake \rightarrow 1, haveNoCake \rightarrow 1 \rbrace \]
+	Goal is not accomplished as we don't have cake.
+\end{document}
