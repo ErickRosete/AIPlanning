@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  11 DEC 2019 23:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  12 DEC 2019 00:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -264,52 +264,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--50
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
 
  []
 
 [1
 
 {d:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<./img/img1.jpg, id=14, 822.82407pt x 371.13657pt>
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+
+ []
+
+<./img/stability_cond.png, id=14, 616.704pt x 334.24875pt>
+File: ./img/stability_cond.png Graphic file (type png)
+<use ./img/stability_cond.png>
+Package pdftex.def Info: ./img/stability_cond.png  used on input line 75.
+(pdftex.def)             Requested size: 308.35124pt x 167.12396pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+<./img/without_stability.png, id=16, 740.7675pt x 324.61275pt>
+File: ./img/without_stability.png Graphic file (type png)
+<use ./img/without_stability.png>
+Package pdftex.def Info: ./img/without_stability.png  used on input line 80.
+(pdftex.def)             Requested size: 370.38284pt x 162.30597pt.
+[2 <./img/stability_cond.PNG> <./img/without_stability.PNG>]
+<./img/img1.jpg, id=22, 822.82407pt x 371.13657pt>
 File: ./img/img1.jpg Graphic file (type jpg)
 <use ./img/img1.jpg>
-Package pdftex.def Info: ./img/img1.jpg  used on input line 76.
+Package pdftex.def Info: ./img/img1.jpg  used on input line 96.
 (pdftex.def)             Requested size: 411.41103pt x 185.56783pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
-<./img/hmax.jpg, id=15, 816.80156pt x 465.99094pt>
+<./img/hmax.jpg, id=23, 816.80156pt x 465.99094pt>
 File: ./img/hmax.jpg Graphic file (type jpg)
 <use ./img/hmax.jpg>
-Package pdftex.def Info: ./img/hmax.jpg  used on input line 81.
+Package pdftex.def Info: ./img/hmax.jpg  used on input line 101.
 (pdftex.def)             Requested size: 408.39978pt x 232.99489pt.
-[2 <./img/img1.JPG> <./img/hmax.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+[3 <./img/img1.JPG> <./img/hmax.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-<./img/hadd.jpg, id=19, 825.83531pt x 444.91219pt>
+<./img/hadd.jpg, id=27, 825.83531pt x 444.91219pt>
 File: ./img/hadd.jpg Graphic file (type jpg)
 <use ./img/hadd.jpg>
-Package pdftex.def Info: ./img/hadd.jpg  used on input line 86.
+Package pdftex.def Info: ./img/hadd.jpg  used on input line 106.
 (pdftex.def)             Requested size: 412.91664pt x 222.45554pt.
-[3 <./img/hadd.JPG>] (./AIP-EX07-Rosete-Borja.aux) ) 
+[4 <./img/hadd.JPG>] (./AIP-EX07-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
- 3679 strings out of 492167
- 49386 string characters out of 6129158
- 127352 words of memory out of 5000000
- 7983 multiletter control sequences out of 15000+600000
+ 3694 strings out of 492167
+ 49757 string characters out of 6129158
+ 126352 words of memory out of 5000000
+ 7995 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,5n,30p,442b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
 <d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AIP-EX07-Rosete-Borja.pdf (3 pages, 430204 bytes).
+Output written on AIP-EX07-Rosete-Borja.pdf (4 pages, 510048 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 57 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

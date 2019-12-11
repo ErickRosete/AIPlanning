@@ -62,7 +62,27 @@ Then:
 \textbf{Show that it is important to test for stability when computing $h_{add}$
 by giving an example where you get an unnecessairly high overestimation
 when not performing this test.}\\
+Consider the following relaxed planning task.\\
+\[\Pi = \langle A, I, O^+, \gamma \rangle \]
+\[A = \{a_0, a_1, a_2, a_3, a_4 \} \]
+\[I = \{ a_0 \mapsto 1, a_1 \mapsto 0, a_2 \mapsto 0,
+ a_3 \mapsto 0, a_4 \mapsto 0 \}\]
+\[O^+ = \{ \langle a_0, a_1 \rangle, \langle a_1, a_2 \rangle ,
+\langle a_2, a_3 \rangle, \langle a_3, a_4 \rangle\}\]
+\[\gamma = a_1 \land a_2 \land a_3 \lor a_4 \]
+Without a stability test we would get a planning graph as:\\
+\begin{center}
+	\includegraphics[scale=0.5]{stability_cond.png}\\
+\end{center}
 
+With stability test: \\
+\begin{center}
+	\includegraphics[scale=0.5]{without_stability.png}\\
+\end{center}
+This means that if we do not wait for the planning graph to be stable
+we can overestimate the heuristic when using $h_{add}$.
+
+\newpage
 \section*{Exercise 7.3 - Relaxed planning graph and heuristics}
 
 \textbf{Consider the relaxed planning task $\Pi^+$ with variables 
