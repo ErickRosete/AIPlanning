@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  10 DEC 2019 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  11 DEC 2019 23:35
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -154,18 +154,18 @@ LaTeX Warning: Command \underline  has changed.
 ) (./AIP-EX07-Rosete-Borja.aux)
 \openout1 = `AIP-EX07-Rosete-Borja.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  (d:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
@@ -246,39 +246,70 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
 (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
  (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 36--43
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 [1
 
-{d:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./AIP-EX07-Rosete-Borja.aux) ) 
+{d:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<./img/img1.jpg, id=14, 822.82407pt x 371.13657pt>
+File: ./img/img1.jpg Graphic file (type jpg)
+<use ./img/img1.jpg>
+Package pdftex.def Info: ./img/img1.jpg  used on input line 76.
+(pdftex.def)             Requested size: 411.41103pt x 185.56783pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+<./img/hmax.jpg, id=15, 816.80156pt x 465.99094pt>
+File: ./img/hmax.jpg Graphic file (type jpg)
+<use ./img/hmax.jpg>
+Package pdftex.def Info: ./img/hmax.jpg  used on input line 81.
+(pdftex.def)             Requested size: 408.39978pt x 232.99489pt.
+[2 <./img/img1.JPG> <./img/hmax.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+<./img/hadd.jpg, id=19, 825.83531pt x 444.91219pt>
+File: ./img/hadd.jpg Graphic file (type jpg)
+<use ./img/hadd.jpg>
+Package pdftex.def Info: ./img/hadd.jpg  used on input line 86.
+(pdftex.def)             Requested size: 412.91664pt x 222.45554pt.
+[3 <./img/hadd.JPG>] (./AIP-EX07-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
- 3656 strings out of 492167
- 49067 string characters out of 6129158
- 125340 words of memory out of 5000000
- 7965 multiletter control sequences out of 15000+600000
+ 3679 strings out of 492167
+ 49386 string characters out of 6129158
+ 127352 words of memory out of 5000000
+ 7983 multiletter control sequences out of 15000+600000
  12710 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,4n,30p,442b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
-<d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AIP-EX07-Rosete-Borja.pdf (1 page, 74068 bytes).
+ 46i,5n,30p,442b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+<d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on AIP-EX07-Rosete-Borja.pdf (3 pages, 430204 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
