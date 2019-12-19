@@ -1,15 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  19 DEC 2019 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.10.26)  19 DEC 2019 21:20
 entering extended mode
- \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**"d:/GoogleDrive/Semestre1/Principles of AI Planning/AIPlanning/Exercise8/AIP-EX08-Rosete-Borja"
-(d:/GoogleDrive/Semestre1/Principles of AI Planning/AIPlanning/Exercise8/AIP-EX08-Rosete-Borja.tex
-LaTeX2e <2019-10-01> patch level 1
-(d:/texlive/2019/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-(d:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+**./AIP-EX08-Rosete-Borja.tex
+(AIP-EX08-Rosete-Borja.tex
+LaTeX2e <2018-12-01>
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -22,42 +19,53 @@ File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (d:/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+) ("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-) (d:/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2019/04/01 v2.17c AMS math features
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
+y"
+Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(d:/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
+y"
 Package: amstext 2000/06/29 v2.01 AMS text
- (d:/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen103
-)) (d:/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
-) (d:/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 227.
+LaTeX Info: Redefining \frac on input line 223.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 389.
+LaTeX Info: Redefining \overline on input line 385.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -78,10 +86,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2855.
-LaTeX Info: Redefining \] on input line 2856.
-) (d:/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
+sty"
+Package: enumitem 2019/02/04 v3.8 Customized lists
 \enitkv@toks@=\toks21
 \labelindent=\skip46
 \enit@outerparindent=\dimen112
@@ -89,43 +99,68 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box29
 \enit@count@id=\count100
 \enitdp@description=\count101
-) (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.
+sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
+ty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-) (d:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
- (d:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
-) (d:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
- (d:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (d:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
- (d:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
-) (d:/texlive/2019/texmf-dist/tex/latex/commath/commath.sty (d:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/commath\commath.st
+y" ("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty
+"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)) (d:/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+))
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.s
+ty"
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-) (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.
+sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) (d:/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.
+sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count102
@@ -140,33 +175,31 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen121
 \Gm@layoutvoffset=\dimen122
 \Gm@dimlist=\toks24
-) (d:/texlive/2019/texmf-dist/tex/latex/sectsty/sectsty.sty
-Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
 
-
-LaTeX Warning: Command \underbar  has changed.
-               Check if current package is valid.
-
-
-LaTeX Warning: Command \underline  has changed.
-               Check if current package is valid.
-
-) (./AIP-EX08-Rosete-Borja.aux)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+cfg"))
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sectsty\sectsty.st
+y"
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+) (AIP-EX08-Rosete-Borja.aux)
 \openout1 = `AIP-EX08-Rosete-Borja.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
- (d:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
+df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen123
@@ -179,39 +212,60 @@ LaTeX Font Info:    ... okay on input line 24.
 \MPnumerator=\count109
 \makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks26
-) (d:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
+base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infware
+rr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-) (d:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+)
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.st
+y"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdefin
+ekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds
+.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-))) (d:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+)))
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions
+.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvsetke
+ys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexcmd
+s.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
- (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifluate
+x.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)))) (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO)
+))))
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdftexc
+mds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
- (d:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -246,46 +300,73 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
-(d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
- (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <./img/img1.jpg, id=1, 822.82407pt x 371.13657pt>
 File: ./img/img1.jpg Graphic file (type jpg)
 <use ./img/img1.jpg>
-Package pdftex.def Info: ./img/img1.jpg  used on input line 46.
+Package pdftex.def Info: ./img/img1.jpg  used on input line 47.
 (pdftex.def)             Requested size: 411.41103pt x 185.56783pt.
 <./img/hsa.jpg, id=2, 837.88031pt x 384.6872pt>
 File: ./img/hsa.jpg Graphic file (type jpg)
 <use ./img/hsa.jpg>
-Package pdftex.def Info: ./img/hsa.jpg  used on input line 52.
+Package pdftex.def Info: ./img/hsa.jpg  used on input line 53.
 (pdftex.def)             Requested size: 418.93913pt x 192.34312pt.
- [1
+[1
 
-{d:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/img1.JPG> <./img/hsa.jpg>]
-<./img/hff.jpg, id=14, 800.9925pt x 373.395pt>
+{C:/Users/erick/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/img1.
+jpg> <./img/hsa.jpg>]
+<./img/hff.jpg, id=13, 800.9925pt x 373.395pt>
 File: ./img/hff.jpg Graphic file (type jpg)
 <use ./img/hff.jpg>
-Package pdftex.def Info: ./img/hff.jpg  used on input line 57.
+Package pdftex.def Info: ./img/hff.jpg  used on input line 58.
 (pdftex.def)             Requested size: 400.49527pt x 186.69704pt.
- [2 <./img/hff.jpg>] (./AIP-EX08-Rosete-Borja.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 66.
+
+("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omszplm.fd"
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+[2 <./img/hff.jpg>] (AIP-EX08-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
- 3669 strings out of 492167
- 49233 string characters out of 6129158
- 125352 words of memory out of 5000000
- 7973 multiletter control sequences out of 15000+600000
- 10409 words of font info for 39 fonts, out of 8000000 for 9000
+ 3400 strings out of 492942
+ 48688 string characters out of 3126214
+ 123357 words of memory out of 3000000
+ 7233 multiletter control sequences out of 15000+200000
+ 12497 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,5n,30p,442b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
-<d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AIP-EX08-Rosete-Borja.pdf (2 pages, 416878 bytes).
+ 41i,5n,25p,375b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Users/erick/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Users/erick/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/
+Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr12.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Users/erick/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on AIP-EX08-Rosete-Borja.pdf (2 pages, 435412 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

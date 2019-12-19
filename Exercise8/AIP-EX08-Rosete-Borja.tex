@@ -4,6 +4,7 @@
 \usepackage[width=18.00cm, height=25.00cm]{geometry}
 \usepackage{sectsty}
 \graphicspath{ {./img/} }
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 
 \sectionfont
 {\fontsize{14.4}{12}\selectfont}
@@ -60,5 +61,25 @@ that is necessary to extract a solution}
 
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 8.1 - Finite domain representation}
+	FDR planning task $\Pi' = \langle V, I, O, \gamma \rangle$\\
+\[V = \{ above-a, above-b, above-c, below-a, below-b, below-c \} \]
+\[ \pazocal{D}_{above\text{-}a} = \{b, c, nothing\} \]
+\[ \pazocal{D}_{above\text{-}b} = \{a, c, nothing\} \]
+\[ \pazocal{D}_{above\text{-}c} = \{a, b, nothing\} \]
+\[ \pazocal{D}_{below\text{-}a} = \{b, c, table\} \]
+\[ \pazocal{D}_{below\text{-}b} = \{a, c, table\} \]
+\[ \pazocal{D}_{below\text{-}c} = \{a, b, table\} \]
+\[I = \{above\text{-}a \mapsto nothing, above\text{-}b \mapsto a, above\text{-}c \mapsto nothing,\]
+\[ below\text{-}a \mapsto b, below\text{-}b \mapsto table, below\text{-}c\mapsto table\}\]
+\[O = {move\text{-}x\text{-}y\text{-}z, move\text{-}x\text{-}table\text{-}z, move\text{-}x\text{-}y\text{-}table}\]
+\[move\text{-}x\text{-}y\text{-}z =\langle above\text{-}y = x \land above\text{-}x = nothing \land above\text{-}z = nothing,\]
+\[ below\text{-}x := z \land above\text{-}y: = nothing \land above\text{-}z: = x \rangle \]\\
+\[move\text{-}x\text{-}table\text{-}z =\langle above\text{-}x = nothing \land below\text{-}x = table \land above\text{-}z = nothing,\]
+\[ below\text{-}x := z \land above\text{-}z: = x \rangle \]\\
+\[move\text{-}x\text{-}y\text{-}table =\langle above\text{-}y = x \land above\text{-}x = nothing,\]
+\[ below\text{-}x :=  table \land above\text{-}y: = nothing \rangle \]
+for pair-wise distinct $x,y,z \in {a, b, c}$
+\[\gamma = above\text{-}c = b \land above\text{-}a = c\]
+
 
 \end{document}
