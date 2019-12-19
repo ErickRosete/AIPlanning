@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  19 DEC 2019 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  19 DEC 2019 23:04
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -326,11 +326,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 71.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 72.
 (d:/texlive/2019/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 ) [2 <./img/hff.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
@@ -344,7 +344,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  46i,10n,30p,442b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
 <d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on AIP-EX08-Rosete-Borja.pdf (3 pages, 438380 bytes).
+Output written on AIP-EX08-Rosete-Borja.pdf (3 pages, 438410 bytes).
 PDF statistics:
  45 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
