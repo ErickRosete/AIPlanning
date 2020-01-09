@@ -49,7 +49,29 @@
 
 \begin{enumerate}[label=(\alph*), listparindent=1.5em]
 	\item \textbf{Specify the compatibility graph of $\pazocal{C}$ and
-	determine its maximal cliques}
+	determine its maximal cliques}\\
+	\textbf{Process}:\\
+	To determine the compatibility graph, first we avoid drawing connections with the patterns with the same variables.\\
+	$\{ P_1, P_3, P_8 \}$ share variable $at$-$goal_{s2}$\\
+	$\{ P_2, P_4, P_6, P_7, P_{10} \}$ share variable $at$-$goal_{s1}$\\
+	$\{ P_2, P_4\}$ share variable $position_{s1}$\\
+	$\{ P_4, P_5\}$ share variable $position_{p}$\\\\
+	Then we analyzed which operations affect two variables in different patterns and we find the followings:\\
+	- $move$ always affects $position_p$ but it can also affect $content_x = nothing$ to $content_x := p$ or viceversa, therefore $\{ P_4, P_5 \}$ are not orthogonal with $\{P_6, P_7, P_8, P_9, P_9, P_{10}\}$ (no line from first set to second set)\\
+	- $push$ affects $position_p$ and $position_{s1}$ or $position_{s2}$, therefore $\{ P_4, P_5 \}$ are not orthogonal with $\{P_2, P_3\}$\\
+	- $push$ affects $position_{s1}$ and $content_x$, analogously with $position_{s2}$ therefore $\{ P_2, P_3, P_4, P_5\}$ are not orthogonal with $\{P_6, P_7, P_8, P_9, P_10\}$\\
+	- When we $push$ box $s1$ to the goal, $position_{s1}$, $position_p$ and $at$-$goal_{s1}$ are affected, analogously with $s2$, therefore:\\
+	$\{ P_2, P_4, P_5 \}$ are not orthogonal with $\{P_2, P_4, P_6, P_7, P_{10}\}$ because of $position_{s1}$ and $at$-$goal_{s1}$\\
+	$\{ P_3\}$ are not orthogonal with $\{P_1, P_3, P_8\}$ because of $position_{s2}$ and $at$-$goal_{s2}$\\
+	$\{ P_4, P_5\}$ are not orthogonal with $\{P_1, P_2, P_3, P_4, P_6, P_7, P_8, P_{10}\}$ because of $position_{p}$ and $at$-$goal_{s1}$ or $at$-$goal_{s2}$\\
+	- We can $push$ a box from $Q$ to a goal position, therefore, affecting $content_Q$ and $at$-$goal_{s1}$ or $at$-$goal_{s2}$, therefore $\{ P_{10}\}$ are not orthogonal with $\{P_1, P_2, P_3, P_4, P_6, P_7, P_8\}$\\
+	- We can $push$ a box from $K$ to $Q$ with the agent position in $E$, $content_E$ and $content_Q$ are affected, therefore $\{ P_9\}$ and $\{P_{10}\}$ are not orthogonal.\\
+	- We can $push$ a box from $F$ to $E$ with the agent position in $G$, $content_G$ and $content_E$ are affected, therefore $\{ P_7\}$ and $\{P_9\}$ are not orthogonal.\\
+	- We can $move$ between $D$ and $E$, affecting $content_D$ and $content_E$, therefore $\{ P_8\}$ and $\{P_9\}$ are not orthogonal.\\
+	- We can $move$ between $G$ and $H$, affecting $content_G$ and $content_H$, therefore $\{ P_6\}$ and $\{P_7\}$ are not orthogonal.
+	\pagebreak\\
+	Finally we connect the orthogonal abstractions to find the maximal cliques.\\
+	\textbf{Result}:\\
 	\begin{center}
 		\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm,
 		scale = 1,transform shape]
@@ -88,7 +110,8 @@
 		\end{tabular}
 	\end{center}
 	\item \textbf{Determine the canonical heuristic $h^{\pazocal{C}}$
-	and simplify it as much as possible}
+	and simplify it as much as possible}\\
+	We will obtain the canonical heuristic value for the initial state given this patterns and maximal cliques.\\
 	\begin{multicols}{3}
 		\begin{tabular}{c c}
 			$ i $		& $h^{P_i}$\\
@@ -123,12 +146,20 @@
 
 		\[ h^{\pazocal{C}}=13\]
 	\end{multicols}
-	\item \textbf{Which patterns in $\pazocal{C}$ can be omitted and why?}
+	\item \textbf{Which patterns in $\pazocal{C}$ can be omitted and why?}\\
+	The patterns that don't include any variable from the goal condition as they are in the same abstraction mapping $\alpha$ that a goal statement the heuristic value will be 0, therefore these pattern heuristics are not informative at all, these are $P_5$ and $P_9$. 
 	\item \textbf{What would the canonical heuristic look like if we omitted
-	those patterns before even constructing the compatibility graph}
+	those patterns before even constructing the compatibility graph}\\
+	As the canonical heuristic obtains the sum of all pattern heuristics in cliques, and this pattern heuristic is always 0, the resultant canonical heuristic won't change.\\
 \end{enumerate}
-
+\pagebreak
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 9.2 - Orthogonality and pairwise orthogonality}
-
+Prove the following: $\alpha_1, ..., \alpha_n$ are orthogonal if and only if they are pairwise orthogonal.\\\\
+\textbf{1) if $\alpha_1, ..., \alpha_n$ are orthogonal then they are pairwise orthogonal}\\
+if $\alpha_1, ..., \alpha_n$ are orthogonal, then by definition we know that for all transitions $\langle s, l, t\rangle$ of $\pazocal{T}$, we have $\alpha_i(s) \neq \alpha_i(t)$  for at most one $i \in \{1, ... , n\}$. \\
+Let's assume by the sake of contradiction that they are not pairwise orthogonal, this implies that there is at least one abstraction mapping pair which is not orthogonal, let's consider this pair $j,k \in \{1,...,n\}$ with $j \neq k$ where the abstraction mappings $\alpha_j$ and $\alpha_k$ are not orthogonal, this means that we have at least one transition $\langle s, l, t \rangle$ of $\pazocal{T}$ where $\alpha_j(s) \neq \alpha_j(t)$ and $\alpha_k(s) \neq \alpha_k(t)$, but this cannot be true because the entire system is orthogonal, which is a contradiction, therefore the abstraction mappings are pairwise orthogonal.\\\\
+\textbf{2) if $\alpha_1, ..., \alpha_n$ are pairwise orthogonal then they are orthogonal}\\
+if $\alpha_1, ..., \alpha_n$ are orthogonal, then by definition we know that for all $j, k \in \{1, ... , n\}$ with $j \neq k$, mappings $\alpha_j$ and $\alpha_k$ are orthogonal.\\
+Let's assume by the sake of contradiction that the abstraction mappings are not orthogonal, this implies that there are at least two abstraction mappings in the system where one or more transitions $\langle s, l, t \rangle$ of $\pazocal{T}$, we have $\alpha_i(s) \neq \alpha_i(t)$  for $i \in \{1, ... , n\}$, let's consider this pair $j,k \in \{1,...,n\}$ with $j \neq k$, $\alpha_j$ and $\alpha_k$ are not orthogonal, but all the abstraction mappings are pairwise orthogonal, which is a contradiction, therefore the abstraction mappings are orthogonal.\\
 \end{document}
