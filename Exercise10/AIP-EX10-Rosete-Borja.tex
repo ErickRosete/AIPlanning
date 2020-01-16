@@ -46,19 +46,36 @@
 
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 1 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 10.1 - Affecting labels vs. orthogonality}
+Recall: For a transition system $\pazocal{A}$ and a label $l$ of $\pazocal{A}$, we say that $l$ affects $\pazocal{A}$ if $\pazocal{A}$ has a transition $\langle s, l, t \rangle$ with $s \neq t$.\\
 Prove the following: Let $\pazocal{A}_i$ be an abstraction of some transition system $\pazocal{T}$ with abstraction mapping $\alpha_i$ for $i \in \{1, 2\}$. If no label of $\pazocal{T}$ affects both $\pazocal{A}_1$ and $\pazocal{A}_2$, then $\alpha_1$ and $\alpha_2$ are orthogonal.\\
-Definition of orthogonality:\\
-Let $\alpha_1$ and $\alpha_2$ be abstraction mappings on $\pazocal{T}$.
-We say that $\alpha_1$ and $\alpha_2$ are orthogonal if for all transitions
-$\langle s, l, t \rangle$ of $\pazocal{T}$ , we have $\alpha_i(s) \neq \alpha_i(t)$  for at most one $i \in \{1,2\}$.\\
-Definition of affecting transition labels.\\
-For a transition system $\pazocal{A}$ and a label $l$ of $\pazocal{A}$, we say that $l$ affects $\pazocal{A}$ if $\pazocal{A}$ has a transition $\langle s, l, t \rangle$ with $s \neq t$.\\
-\pagebreak
+
+Take an arbitrary label $l \in \pazocal{T}$, by the premise we know that this label can affect at most one abstraction $\pazocal{A}_i$ for $i \in \{1, 2\}$. If it doesn't affect any abstraction $\pazocal{A}_i$ then there is no transition $\langle s, l ,t \rangle \in \pazocal{T}$ such that 
+$\alpha_1(s) \neq \alpha_1(t)$ or $\alpha_2(s) \neq \alpha_2(t)$.\\
+If the label affects only one abstraction, we take the affected abstraction $\pazocal{A}_i$, we know there is at least one $\langle s, l ,t \rangle \in \pazocal{T}$ such that 
+$\alpha_i(s) \neq \alpha_i(t)$, but in the other abstraction $\pazocal{A}_j$ where $j \in \{1,2\}$ and $j \neq i$ for each transition $\langle s, l ,t \rangle$ of $\pazocal{T}$ we have
+$\alpha_j(s) = \alpha_j(t)$ as the label does not affect $\pazocal{A}_j$.\\
+Therefore no matter which label $l$ is selected there is no transition $\langle s, l, t \rangle \in \pazocal{T}$ where $\alpha_i(s) \neq \alpha_i(t)$ for both $i \in \{1, 2\}$ then by definition $\alpha_1$ and $\alpha_2$ are orthogonal.
+	
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 10.2 - Potential heuristics: consistency constraints}
 Let $\Pi = \langle V, I, O, \gamma \rangle$ be an $SAS^+$ planning task in transition normal form, and let $\pazocal{F} = \{f_{v=d} \mid v \in V, d \in \pazocal{D}_v\}$ be the set of all atomic features over $\Pi$. Finally, let:
 \[h(s) = \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(s) \]
 be the potential heuristic with potentials $w_{v=d}$ for all $v \in V , d \in \pazocal{D}_v$, such that for all $o \in O,$ the following constraint is satisfied:
 \[\sum_{fact\:v=d \text{ consumed by } o} w_{v=d} - \sum_{fact\:v=d \text{ produced by } o} w_{v=d} \leq cost(o)\]
-Prove: Then $h$ is consistent, i. e., $h(s) - h(t) \leq cost(o)$ for all transitions $(s, o, t)$ in $\pazocal{T}(\Pi)$.
+Prove: Then $h$ is consistent, i. e., $h(s) - h(t) \leq cost(o)$ for all transitions $(s, o, t)$ in $\pazocal{T}(\Pi)$.\\
+
+Taking an arbitrary transition $(s, o, t)$ in $\pazocal{T}(\Pi)$ as it is consistent\\
+\begin{equation*}
+	\begin{aligned}
+		h(s) - h(t) \leq cost(o)\\
+		\iff \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(s) + \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(t) \leq cost(o)
+	\end{aligned}
+\end{equation*}
+f
+\begin{equation*}
+	\begin{aligned}
+		\iff \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(s) + \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(t) \leq cost(o)\\
+	\end{aligned}
+\end{equation*}
+
 \end{document}

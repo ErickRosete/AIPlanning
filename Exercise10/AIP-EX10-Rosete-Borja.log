@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.10.26)  16 JAN 2020 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.10.26)  16 JAN 2020 20:05
 entering extended mode
 **./AIP-EX10-Rosete-Borja.tex
 (AIP-EX10-Rosete-Borja.tex
@@ -728,31 +728,46 @@ LaTeX Font Info:    Try loading font information for OMS+zplm on input line 49.
 
 ("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+
+ []
+
+[1
 
 {C:/Users/erick/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] (AIP-EX10-Rosete-Borja.aux) ) 
+(AIP-EX10-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
  14696 strings out of 492942
  303927 string characters out of 3126214
- 353907 words of memory out of 3000000
+ 357907 words of memory out of 3000000
  18301 multiletter control sequences out of 15000+200000
  11885 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,5n,66p,405b,195s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Users/erick/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Users/erick/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Users/erick/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Use
-rs/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Users/erick/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AIP-EX10-Rosete-Borja.pdf (2 pages, 95370 bytes).
+ 55i,7n,66p,405b,195s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Users/erick/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Users/erick/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Users/e
+rick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr8.pfb><D:/Users/erick/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on AIP-EX10-Rosete-Borja.pdf (1 page, 96205 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
