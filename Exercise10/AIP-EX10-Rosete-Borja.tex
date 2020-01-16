@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,enumitem,amsfonts,amssymb,graphicx,commath}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\graphicspath{ {./img/} }
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\usetikzlibrary{arrows,automata}
+
+\usepackage[%
+    left=1in,%
+    right=1.0in,%
+    top=0.8in,%
+    bottom=1in,%
+]{geometry}%
+
+\sectionfont
+{\fontsize{14.4}{12}\selectfont}
+\title{\textbf{Principles of AI Planning
+		\\{\Large Exercise Sheet 10}}}
+\makeatletter
+\renewcommand{\@maketitle}
+{
+	\newpage
+	\null
+	\vskip 2em%
+	\begin{center}%
+		{\LARGE \@title \\ \par}%
+	\end{center}%
+	\par
+} \makeatother
+
+\begin{document}
+\begin{flushleft}
+	Authors:\\
+	Erick Rosete Beas | er165@uni-freiburg.de\\
+	Jessica Lizeth Borja Diaz | jb986@uni-freiburg.de\\
+\end{flushleft}
+{\let\newpage\relax\maketitle}
+\begin{center} 
+	\large 17.01.2020
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%  Ejercicio 1 %%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Exercise 10.1 - Affecting labels vs. orthogonality}
+Prove the following: Let $\pazocal{A}_i$ be an abstraction of some transition system $\pazocal{T}$ with abstraction mapping $\alpha_i$ for $i \in \{1, 2\}$. If no label of $\pazocal{T}$ affects both $\pazocal{A}_1$ and $\pazocal{A}_2$, then $\alpha_1$ and $\alpha_2$ are orthogonal.\\
+Definition of orthogonality:\\
+Let $\alpha_1$ and $\alpha_2$ be abstraction mappings on $\pazocal{T}$.
+We say that $\alpha_1$ and $\alpha_2$ are orthogonal if for all transitions
+$\langle s, l, t \rangle$ of $\pazocal{T}$ , we have $\alpha_i(s) \neq \alpha_i(t)$  for at most one $i \in \{1,2\}$.\\
+Definition of affecting transition labels.\\
+For a transition system $\pazocal{A}$ and a label $l$ of $\pazocal{A}$, we say that $l$ affects $\pazocal{A}$ if $\pazocal{A}$ has a transition $\langle s, l, t \rangle$ with $s \neq t$.\\
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Exercise 10.2 - Potential heuristics: consistency constraints}
+Let $\Pi = \langle V, I, O, \gamma \rangle$ be an $SAS^+$ planning task in transition normal form, and let $\pazocal{F} = \{f_{v=d} \mid v \in V, d \in \pazocal{D}_v\}$ be the set of all atomic features over $\Pi$. Finally, let:
+\[h(s) = \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(s) \]
+be the potential heuristic with potentials $w_{v=d}$ for all $v \in V , d \in \pazocal{D}_v$, such that for all $o \in O,$ the following constraint is satisfied:
+\[\sum_{fact\:v=d \text{ consumed by } o} w_{v=d} - \sum_{fact\:v=d \text{ produced by } o} w_{v=d} \leq cost(o)\]
+Prove: Then $h$ is consistent, i. e., $h(s) - h(t) \leq cost(o)$ for all transitions $(s, o, t)$ in $\pazocal{T}(\Pi)$.
+\end{document}
