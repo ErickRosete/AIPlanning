@@ -19,7 +19,7 @@
 \sectionfont
 {\fontsize{14.4}{12}\selectfont}
 \title{\textbf{Principles of AI Planning
-		\\{\Large Exercise Sheet 10}}}
+		\\{\Large Exercise Sheet 11}}}
 \makeatletter
 \renewcommand{\@maketitle}
 {
@@ -40,7 +40,7 @@
 \end{flushleft}
 {\let\newpage\relax\maketitle}
 \begin{center} 
-	\large 17.01.2020
+	\large 24.01.2020
 \end{center}
 
 
@@ -71,22 +71,22 @@ task $\Pi$ without any form of partial-order reduction.
 				active/.style = {draw=green,text= black, very thick}
             ]
             
-			\node(a) at (0,0) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto f ,$ $hat \mapsto f \}$};
+			\node(a)[text width = 21em] at (0,0) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto f ,$ $hat \mapsto f \}$};
 			
-			\node(b) at (-6,-5) {$\{pos \mapsto home,$  $left\mapsto t,$  $right \mapsto f ,$ $hat \mapsto f \}$};
-            \node(c) at (0,-5) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto f ,$ $hat \mapsto t \}$};
-			\node(d) at (6,-5) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto t ,$ $hat \mapsto f \}$};
+			\node(b) at (-6,-2.5) {$\{pos \mapsto home,$  $left\mapsto t,$  $right \mapsto f ,$ $hat \mapsto f \}$};
+            \node(c) at (0,-2.5) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto f ,$ $hat \mapsto t \}$};
+			\node(d) at (6,-2.5) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto t ,$ $hat \mapsto f \}$};
 			
-			\node(e) at (-7,-11) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto f ,$ $hat \mapsto t \}$};
-			\node(f) at (-4,-11) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
-			\node(g) at (-1,-11) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto f ,$ $hat \mapsto t \}$};
-			\node(h) at (2,-11) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto t ,$ $hat \mapsto t \}$};
-			\node(i) at (5,-11) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
-			\node(j) at (8,-11) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto t ,$ $hat \mapsto t \}$};
+			\node(e) at (-7,-6.5) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto f ,$ $hat \mapsto t \}$};
+			\node(f) at (-4,-6.5) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
+			\node(g) at (-1,-6.5) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto f ,$ $hat \mapsto t \}$};
+			\node(h) at (2,-6.5) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto t ,$ $hat \mapsto t \}$};
+			\node(i) at (5,-6.5) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
+			\node(j) at (8,-6.5) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto t ,$ $hat \mapsto t \}$};
 
-			\node(k) at (-7,-17) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto t \}$};
-			\node(l) at (-4,-17) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto t \}$};
-			\node(m)[active] at (0,-17) {$\{pos \mapsto uni,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
+			\node(k) at (-7,-10) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto t \}$};
+			\node(l) at (-4,-10) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto t \}$};
+			\node(m)[active] at (0,-10) {$\{pos \mapsto uni,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
 
 		\end{scope}
 		\begin{scope}
@@ -96,18 +96,18 @@ task $\Pi$ without any form of partial-order reduction.
 				active/.style = {draw=green,text= black, very thick}
             ]
             \path 
-            (a) edge         node[sloped, above]{$wear-left-shoe$}(b)
-            (a) edge         node{$wear-hat$}(c)
-			(a) edge         node[sloped, above]{$wear-right-shoe$}(d)
-			(b) edge         node[sloped, above]{$wear-hat$}(e)
-			(b) edge         node[sloped, above]{$wear-right-shoe$}(f)
-			(c) edge         node[sloped, above]{$wear-left-shoe$}(g)
-			(c) edge         node[sloped, above]{$wear-right-shoe$}(h)
-			(d) edge         node[sloped, above]{$wear-left-shoe$}(i)
-			(d) edge         node[sloped, above]{$wear-hat$}(j)
-			(e) edge         node[sloped, above]{$wear-right-shoe$}(k)
-			(f) edge         node[sloped, above]{$wear-hat$}(l)
-			(f) edge         node[sloped, above]{$go-uni$}(m);
+            (a) edge         node{$WLS$}(b)
+            (a) edge         node{$WH$}(c)
+			(a) edge         node{$WRS$}(d)
+			(b) edge         node{$WH$}(e)
+			(b) edge         node{$WRS$}(f)
+			(c) edge         node{$WLS$}(g)
+			(c) edge         node{$WRS$}(h)
+			(d) edge         node{$WLS$}(i)
+			(d) edge         node{$WH$}(j)
+			(e) edge         node{$WRS$}(k)
+			(f) edge         node{$WH$}(l)
+			(f) edge         node{$GU$}(m);
 		\end{scope}
     \end{tikzpicture}
 \end{center}
@@ -151,59 +151,8 @@ interfering operators, respectively. Break ties in favor of \emph{wear-left-shoe
 
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 11.2 - Weak vs. strong stubborn sets}
-show that \emph{weak} stubborn sets admint exponentially more pruning than
+Show that \emph{weak} stubborn sets admint exponentially more pruning than
 \emph{strong} stubborn sets.\\
 
-
-Let $\Pi = \langle V, I, O, \gamma \rangle$ be an $SAS^+$ planning task in transition normal form, and let $\pazocal{F} = \{f_{v=d} \mid v \in V, d \in \pazocal{D}_v\}$ be the set of all atomic features over $\Pi$. Finally, let:
-\[h(s) = \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(s) \]
-be the potential heuristic with potentials $w_{v=d}$ for all $v \in V , d \in \pazocal{D}_v$, such that for all $o \in O,$ the following constraint is satisfied:
-\[\sum_{fact\:v=d \text{ consumed by } o} w_{v=d} - \sum_{fact\:v=d \text{ produced by } o} w_{v=d} \leq cost(o)\]
-Prove: Then $h$ is consistent, i. e., $h(s) - h(t) \leq cost(o)$ for all transitions $(s, o, t)$ in $\pazocal{T}(\Pi)$.\\
-
-Taking an arbitrary transition $(s, o, t)$ in $\pazocal{T}(\Pi)$ as it is consistent\\
-
-\[		h(s) - h(t) \leq cost(o) \]
-
-\begin{equation*}
-	\begin{aligned}
-		\iff \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(s) + \sum_{fact\:v=d} w_{v=d} \cdot f_{v=d}(t) \leq cost(o)
-	\end{aligned}
-\end{equation*}
-
-\begin{multicols}{2}
-	\begin{equation*}
-		f_{v=d}(s)=
-		\begin{cases}
-		0, & \text{if } s\: \not\models v=d \\
-		1, & \text{if } s\: \models v=d
-		\end{cases}
-	\end{equation*}
-
-	\begin{equation*}
-		f_{v=d}(t)=
-		\begin{cases}
-		0, & \text{if } t\: \not\models v=d \\
-		1, & \text{if } t\: \models v=d
-		\end{cases}
-	\end{equation*}
-\end{multicols}
-
-\begin{equation*}
-	\begin{aligned}
-		\iff \sum_{\substack{fact\:v=d \\ s\:\models\: v=d}} w_{v=d} + \sum_{\substack{fact\:v=d \\ t\: \models\: v=d}} w_{v=d} \leq cost(o)\\
-	\end{aligned}
-\end{equation*}
-We know that in the transition $(s, o, t)$ the $vars(t) = vars(s) -$ consumed $vars$ by o $+$ produced $vars$ by o, therefore:
-\begin{equation*}
-	\begin{aligned}
-		\iff \sum_{\substack{fact\:v=d \\ s\:\models\: v=d}} w_{v=d} - 
-			  \left[ \sum_{\substack{fact\:v=d \\ s\:\models \: v=d}} w_{v=d} - 
-			  \sum_{\substack{fact\:v=d \\ \text{consumed by o}}} w_{v=d} + 
-			  \sum_{\substack{fact\:v=d\\ \text{produced by o}}} w_{v=d} \right] \leq cost(o) \\
-		\iff \sum_{\substack{fact\:v=d \\ \text{consumed by o}}} w_{v=d} -
-			 \sum_{\substack{fact\:v=d\\ \text{produced by o}}} w_{v=d} \leq cost(o) 
-	\end{aligned}
-\end{equation*}
 
 \end{document}
