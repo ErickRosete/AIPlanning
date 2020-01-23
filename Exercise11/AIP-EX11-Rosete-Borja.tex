@@ -118,7 +118,7 @@ $T_s$ (and thus $T_{app(s)}$) are computed, i.e., explain how the initial disjun
 is chosen and how operators are iteratively added to $T_s$ as part of necessary enabling sets or
 interfering operators, respectively. Break ties in favor of \emph{wear-left-shoe} over \emph{wear-right-shoe.}\\
 
-\textbf{How many node expansion do you save with strong stubborn sets compared to plain breadthfirst search?
+\textbf{How many node expansion do you save with strong stubborn sets compared to plain breadth-first search?
  What about the lengths of the resulting solutions?}\\
 
 \begin{center}
@@ -129,10 +129,10 @@ interfering operators, respectively. Break ties in favor of \emph{wear-left-shoe
 				active/.style = {draw=green,text= black, very thick}
             ]
             
-			\node(a) at (0,0) {$\{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto f ,$ $hat \mapsto f \}$};
+			\node(a) at (0,0) {$S_1 = \{pos \mapsto home,$ $left\mapsto f,$ $right \mapsto f ,$ $hat \mapsto f \}$};
 			
-			\node(b) at (0,-2) {$\{pos \mapsto home,$  $left\mapsto t,$  $right \mapsto f ,$ $hat \mapsto f \}$};
-			\node(f) at (0,-4) {$\{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
+			\node(b) at (0,-2) {$S_2 = \{pos \mapsto home,$  $left\mapsto t,$  $right \mapsto f ,$ $hat \mapsto f \}$};
+			\node(f) at (0,-4) {$S_3 = \{pos \mapsto home,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
 			\node(m)[active] at (0,-6) {$\{pos \mapsto uni,$ $left\mapsto t,$ $right \mapsto t ,$ $hat \mapsto f \}$};
 
 		\end{scope}
@@ -149,6 +149,30 @@ interfering operators, respectively. Break ties in favor of \emph{wear-left-shoe
     \end{tikzpicture}
 \end{center}
 
+The strong stubborn set in $S_1$ is determined by taking into account the disjunctive action landmark, we know the operator $go$-$to$-$university$ must be inside this set.\\
+As $go$-$to$-$university$ is not applicable in the initial state, then we need to add a neccessary enabling set for this operator, a possible NES is $\{wear$-$left$-$shoe\}$ or $\{wear$-$right$-$shoe\},$ we broke ties by adding the operator $wear$-$left$-$shoe$ to the strong stubborn set.\\
+As $wear$-$left$-$shoe$ is applicable, we must add all operators that interfere, the only operator that interferes with this operator is $go$-$to$-$university$ but it is already in the set, therefore:
+\begin{center}
+	$T_{S_1} = \{go$-$to$-$university, wear$-$left$-$shoe\}$\\
+	$T_{S_1} \cap T_{app(S_1)} = \{wear$-$left$-$shoe\}$
+\end{center}
+
+The strong stubborn set in $S_2$ is determined using again $\{go$-$to$-$university\}$ as DAL.\\
+As $go$-$to$-$university$ is not applicable in $S_2$, then the smallest NES is $\{wear$-$right$-$shoe\}$\\
+As $wear$-$right$-$shoe$ is applicable, we must add the operator $go$-$to$-$university$ as it interferes,  but it is already in the set, therefore:
+\begin{center}
+	$T_{S_2} = \{go$-$to$-$university, wear$-$right$-$shoe\}$\\
+	$T_{S_2} \cap T_{app(S_2)} = \{wear$-$right$-$shoe\}$
+\end{center}
+
+The strong stubborn set in $S_3$ is determined using again $\{go$-$to$-$university\}$ as DAL.\\
+As $go$-$to$-$university$ is applicable in $S_3$, then we need to add all operators that interfere, in this case $go$-$to$-$university$ disables $\{wear$-$left$-$shoe, wear$-$right$-$shoe, wear$-$hat\}$
+\begin{center}
+	$T_{S_3} = \{go$-$to$-$university, wear$-$left$-$shoe, wear$-$right$-$shoe, wear$-$hat\}$\\
+	$T_{S_3} \cap T_{app(S_3)} = \{go$-$to$-$university, wear$-$hat\}$
+\end{center}
+In this case the first visited node was a goal state, after that we stopped the search.\\\\
+By prunning with the strong stubborn set we only visited $4$ states, in contrast without prunning we visited $13$ states, $9$ states more, which represents approximately a $30\%$ of the previous graph.
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 11.2 - Weak vs. strong stubborn sets}
 Show that \emph{weak} stubborn sets admint exponentially more pruning than
