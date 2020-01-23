@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.10.26)  23 JAN 2020 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.10.26)  23 JAN 2020 03:32
 entering extended mode
 **./AIP-EX11-Rosete-Borja.tex
 (AIP-EX11-Rosete-Borja.tex
@@ -808,16 +808,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--177
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
  []
 
-[2] [3] (AIP-EX11-Rosete-Borja.aux) ) 
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 182.
+
+ ("D:\Users\erick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+
+ []
+
+[3] [4] (AIP-EX11-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
- 16511 strings out of 492942
- 351914 string characters out of 3126214
+ 16529 strings out of 492942
+ 352270 string characters out of 3126214
  431372 words of memory out of 3000000
- 20077 multiletter control sequences out of 15000+200000
+ 20092 multiletter control sequences out of 15000+200000
  12539 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,71p,456b,937s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -826,17 +844,20 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Users/erick/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Users/erick/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:
 /Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Users/erick/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Users/erick/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Users/e
-rick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pf
-b>
-Output written on AIP-EX11-Rosete-Borja.pdf (3 pages, 130518 bytes).
+mmi6.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Users/erick/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Users/erick/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Users/er
+ick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><D:/Users/erick/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on AIP-EX11-Rosete-Borja.pdf (4 pages, 157847 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

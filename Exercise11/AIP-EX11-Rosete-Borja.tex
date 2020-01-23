@@ -172,11 +172,56 @@ As $go$-$to$-$university$ is applicable in $S_3$, then we need to add all operat
 	$T_{S_3} \cap T_{app(S_3)} = \{go$-$to$-$university, wear$-$hat\}$
 \end{center}
 In this case the first visited node was a goal state, after that we stopped the search.\\\\
-By prunning with the strong stubborn set we only visited $4$ states, in contrast without prunning we visited $13$ states, $9$ states more, which represents approximately a $30\%$ of the previous graph.
+By pruning with the strong stubborn set we only visited $4$ states, in contrast without pruning we visited $13$ states, $9$ states more, which represents approximately a $30\%$ of the previous graph.
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 11.2 - Weak vs. strong stubborn sets}
-Show that \emph{weak} stubborn sets admint exponentially more pruning than
-\emph{strong} stubborn sets.\\
+Show that \emph{weak} stubborn sets admit exponentially more pruning than
+\emph{strong} stubborn sets.\\\\
+Consider the family of planning tasks $(\Pi_n)_{n \in \mathbb{N}}$, where $\Pi_n = \langle V_n, I_n,O_n, \gamma \rangle$ is the planning task with the following components:
+\begin{itemize}
+	\item $V_n = \{a, x, y, b_1, ..., b_n\}$ with variable domains $\pazocal{D}_a = \pazocal{D}_x = \pazocal{D}_y = \{0, 1\}$ and $\pazocal{D}_{b_i} = \{0,1,2\}$ for all $i \in \{1, ..., n\}$
+	\item $O_n = \{o, o', o_d, \overline{o_d}, o_1, ..., o_n, \overline{o_1}, ...,\overline{o_n}\}$
+	\item $pre(o) = \{ a \mapsto 0 \}, eff(o) = \{ x \mapsto 1  \}$
+	\item $pre(o') = \{ a \mapsto 0 \}, eff(o') = \{ y \mapsto 1  \}$
+	\item $pre(o_d) = \{ a \mapsto 0 \}, eff(o_d) = \{ a \mapsto 1 , b_1 \mapsto 1, ..., b_n \mapsto 1 \}$
+	\item $pre(\overline{o_d}) = \{ a \mapsto 1 \}, eff(o_d) = \{ a \mapsto 0 , b_1 \mapsto 1, ..., b_n \mapsto 1 \}$
+	\item $pre(o_i) = \{b_i \mapsto 1\}, eff(o_i) =\{b_i \mapsto 2 \}$ for $1 \leq i \leq n$
+	\item $pre(\overline{o_i}) = \{b_i \mapsto 2\}, eff(\overline{o_i}) =\{b_i \mapsto 1 \}$ for $1 \leq i \leq n$
+	\item $I_n = \{a \mapsto 0, x \mapsto 0, y \mapsto 0, b_1 \mapsto 0, ..., b_n \mapsto 0\}$
+	\item $\gamma = \{ x \mapsto 1, y \mapsto 1\}$
+\end{itemize}
 
+Let's obtain the strong stubborn set for the given initial state of a planning task $\Pi_j$.\\
+The disjunctive action landmark must contain operators $o$ or $o'$ as this operators are the only ones that can change the value of the variables $x$ and $y$ to $1$.\\
+We will consider both cases and arrive to the same stubborn set.\\
+Case 1: DAL containing ${o}$\\
+As the operator $o$ is applicable we must add all operators that interfere with $o$, in this case operator $o_d$ disables $o$, therefore it must be added to $T_{I_j}$.\\
+As operator $o_d$ is applicable we add all operators, as every operator interferes with $o_d$.\\
+Explanation: we can see that $o_d$ disables operators $o$, $o'$ (because of $a$ assignment) and $\overline{o_i}$ for $1 \leq i \leq j$ (because of $b_i$ assignment), furthermore it conflicts with $\overline{o_d}$ as it assigns a different value to $a$ and it conflicts with every $o_i$ for $1 \leq i \leq j$ as it has a distinct $b_i$ assignment.\\
+Case 2: DAL containing ${o'}$\\
+As $o'$ is applicable we need to add $o_d$ as it interferes with $o'$, $o_d$ is applicable and it interferes with all other operators, therefore the stubborn set is the set of operators
+\begin{center}
+	$T_{I_j} = O_j = \{o, o', o_d, \overline{o_d}, o_1, ..., o_j, \overline{o_1}, ...,\overline{o_j}\}$
+\end{center}
+
+In fact the same behavior will happen for future states as if we haven't reach the goal state we will still have the DAL set including operators $o$ or $o'$. \\
+We can see that if operator $o$ (or $o'$) is applicable we can follow the same logic presented before and if it is not, then the operator $\overline{o_d}$ must be included as part of the NES and as it is applicable we need to add all operators $o_i$, $\overline{o_i}$ and $o_d$ as they interfere with it. This will result in no order reduction at all.\\\\
+
+On the other hand the weak stubborn set for the initial state is the following:\\
+The smallest DAL contains either $o$ or $o'$.\\
+Case 1: DAL containing ${o}$\\
+As the operator $o$ is applicable we search for operators that have conflicting effects with $o$ or that are disabled by $o$. But we can see no precondition includes $x$ therefore $o$ doesn't disable any operator, and no other operator affects $x$ then there are no conflicting operators.
+\begin{center}
+	$T_{I_j} = \{o\}$
+\end{center}
+Case 2: DAL containing ${o'}$\\
+As the operator $o'$ doesn't have conflicting effects or disables another operator. 
+\begin{center}
+	$T_{I_j} = \{o'\}$
+\end{center}
+
+We can conclude that with the given family of planning task there is no way to make smaller the strong stubborn set as it may always contain all the applicable operators, but in contrast the weak stubborn set can contain only $1$ operator in every planning task of this family.
+
+Furthermore solving the planning task using the weak stubborn set will only take two steps, by using operator $o$ followed by $o'$ or viceversa. In contrast as there is in fact no pruning of operators in the strong stubborn set, we will need to explore exponentially more states. 
 
 \end{document}
