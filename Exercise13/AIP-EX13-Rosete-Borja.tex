@@ -205,9 +205,100 @@
 		\end{scope}
 	\end{tikzpicture}
 \end{center}
+%%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Exercise 13.2 - EVMDD sizes and variable orders}
 
+Let $v_0,...,v_{2n-1}$ be variables with domains $\pazocal{D}_{v_i} = \{0,...,k-1\} \forall i = 0,...,2n-1$,
+let $\pi:=\{0,...,2n-1\} \rightarrow \{0,...,2n-1\}$ be a permutation of the variables,
+let $k_j \in \mathbb{N}, j=0,...,n-1,$ be natural numbers and let
+$c = \Sigma_{j=0}^{n-1}k_jv_{\pi(2j)}v_{\pi(2j+1)}$ be an arithmetic
+function over $v_0,...,v_{2n-1}$.Intuitively, $c$ is a weighted sum 
+of products of two variables each, such that no variable occurs in
+more than one product subterm. Show that there exists a variable order 
+for $v_0,...,v_{2n-1}$ such
+that there exists an EVMDD with that order that represents the 
+function $c$ and that has a size (number of edges) in the order 
+of $nk^2$.\\
+
+\emph{Hint:} Consider the example $c=2v_0v_3 + 6v_1v_5 + 4v_2v_4$. How
+should the variables be ordered to minimize the size of the EVMDD.
+\begin{center}
+	\begin{tikzpicture}
+		\begin{scope}
+			[
+				styleVar/.style={
+					minimum width = 2em, draw, circle,
+					label={[above]#1},
+					->=stealth'
+					},
+				styleCost/.style={minimum width = 1em, minimum height=1em, draw},
+				end/.style={ minimum width = 0.2em, draw, thick},
+			]
+			\node(start)[styleCost] at (0,1) {$0$};
+			\node(y)[styleVar] at (0,0) {$v_0$};
+			\node(cy0)[styleCost] at (-3,-2) {};
+			\node(cy1)[styleCost] at (-1,-2) {};
+			\node(dots1) at (1,-2) {$\dots$};
+			\node(cyk1)[styleCost] at (3,-2) {};
+
+			\node(x)[styleVar] at (-1,-3) {$v_3$};
+			\node(cx0)[styleCost] at (-2,-4) {$0$};
+			\node(dots2) at (-1,-4) {$\dots$};
+			\node(cx1)[styleCost] at (0,-4) {};
+
+			\node(dots3) at (1,-4) {$\dots$};
+
+			\node(z)[styleVar] at (3,-3) {$v_3$};
+			\node(cz0)[styleCost] at (2,-4) {};
+			\node(dots3) at (3,-4) {$\dots$};
+			\node(cz1)[styleCost] at (4,-4) {};
+
+			\node(v1)[styleVar] at (0,-6){$v_1$};
+
+			\node(moreDots) at (0,-7) {$\vdots$};
+
+		\end{scope}
+		
+		\begin{scope}
+			[ cost/.style = {->=stealth'},
+				>=stealth',shorten >=1pt,auto]
+			\path 
+			(start) edge[cost] 					node{}(y)
+			(y) edge[above, bend right]        	node{$0$}(cy0)
+			(y) edge[above, bend right]        	node{$1$}(cy1)
+			(y) edge[above, bend left]        	node{$k-1$}(cyk1)
+			(cy0) edge[bend right, cost]     	node{}(v1)
+			(cy1) edge[cost]			     	node{}(x)
+			(cyk1) edge[cost]			     	node{}(z)
+
+			(x) edge[above,bend right]        	node{$0$}(cx0)
+			(x) edge[bend left]         		node{$k-1$}(cx1)
+			(cx0) edge[cost]				    node{}(v1)
+			(cx1) edge[cost]				    node{}(v1)
+
+			(z) edge[above,bend right]        	node{$0$}(cz0)
+			(z) edge[bend left]         		node{$k-1$}(cz1)
+			(cz0) edge[cost]					node{}(v1)
+			(cz1) edge[bend left, cost]			node{}(v1);
+
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+for $c=2v_0v_3 + 6v_1v_5 + 4v_2v_4$ we consider the diagram above
+which is a EVMDD for $c$. $v_0$ can take values from $0$ to $k-1$ 
+hence that node has $k$ outcoming edges. And for $k-1$ edges that
+branch out from $v_0$ there is a node $v_3$ with $k$ more edges.
+Then for each pair $v_{\pi(2j)}v_{\pi(2j+1)}$ there exists $(k-1)k + 1$ edges
+which is in order $O(k^2)$, and we have $n$ variable pairs 
+which means the EVMDD has in total $O(n*k^2)$ edges.\\
+
+Given arbitrary $n$ and $k$, using as variable order
+the order on which the variables show in the cost function
+there exists an EVMDD with that order and represents the cost function
+with $O(n*k^2)$ edges using the same construction as in the previous example.
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 3 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Exercise 13.3 - EVMDD sizes and variable orders}
+\section*{Exercise 13.3 - Evaluating states with EVMDDs}
 Consider a cost function represented by the EVMDD on the right.\\
 Let $s$ be a state with $s(x) = 1$ and $s(y) = 2$. To which value does the
 EVMDD evaluate for state $s$?\\
