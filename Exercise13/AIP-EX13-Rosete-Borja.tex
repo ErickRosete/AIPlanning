@@ -4,6 +4,7 @@
 \usepackage{sectsty}
 \usepackage{multicol}
 \usepackage{tikz}
+\usepackage{graphicx}
 \usetikzlibrary{shapes,arrows,automata,arrows.meta}
 
 \graphicspath{ {./img/} }
@@ -95,11 +96,27 @@
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 2 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Exercise 13.2 - EVMDD sizes and variable orders}
+\section*{Exercise 13.2 - Evaluating states with EVMDDs}
 
 
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 3 %%%%%%%%%%%%%%%%%%%%%%%%%
-
+\section*{Exercise 13.3 - EVMDD sizes and variable orders}
+Consider a cost function represented by the EVMDD on the right.\\
+Let $s$ be a state with $s(x) = 1$ and $s(y) = 2$. To which value does the
+EVMDD evaluate for state $s$?\\
+$cost(s) = 3 + 0 + 5 = 8$
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{13_3.png}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 4 %%%%%%%%%%%%%%%%%%%%%%%%%
-
+\section*{Exercise 13.4 - EVMDD-based action compilation}
+Consider again the EVMDD from Exercise 13.3. Assume it encodes the cost $c_{o_1}$ of operator $o_1 = \langle z = 1 \land u = 1, x := 0\rangle$.
+\begin{enumerate}[label=\alph*)]
+	\item Give the EVMDD-based action compilation of $o_1$ using this EVMDD.
+	\begin{align*}
+		&O_1^{z=1 \land u=1} = \langle z = 1 \land u = 1 \land \sigma = 0 \land \alpha_{o_1} = 0, \sigma := 1 \land \alpha_{o_1} = 1\rangle & cost=3&\\
+		&O_1^{1, x=0} = 
+	\end{align*}
+\end{enumerate}
 \end{document}
