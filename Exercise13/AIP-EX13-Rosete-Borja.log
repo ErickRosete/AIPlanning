@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  3 FEB 2020 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  3 FEB 2020 17:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -545,29 +545,29 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
 (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{d:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./AIP-EX13-Rosete-Borja.aux) ) 
+{d:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./AIP-EX13-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
- 16928 strings out of 492167
- 351354 string characters out of 6129158
- 431457 words of memory out of 5000000
- 20964 multiletter control sequences out of 15000+600000
+ 17003 strings out of 492167
+ 352459 string characters out of 6129158
+ 466677 words of memory out of 5000000
+ 21039 multiletter control sequences out of 15000+600000
  9797 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,71p,524b,949s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,71p,524b,1059s stack positions out of 5000i,500n,10000p,200000b,80000s
 <d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on AIP-EX13-Rosete-Borja.pdf (1 page, 47201 bytes).
+Output written on AIP-EX13-Rosete-Borja.pdf (2 pages, 50658 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 30 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
