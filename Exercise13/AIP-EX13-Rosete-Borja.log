@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  3 FEB 2020 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.26)  3 FEB 2020 19:45
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -520,14 +520,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
-* v-part:(T,H,B)=(57.81621pt, 714.96065pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=452.9679pt
-* \textheight=714.96065pt
+* \textheight=700.50687pt
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
-* \topmargin=-51.45378pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -573,28 +573,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--295
 
  []
 
-<13_3.png, id=13, 168.63pt x 278.4804pt>
+[2]
+<13_3.png, id=23, 168.63pt x 278.4804pt>
 File: 13_3.png Graphic file (type png)
 <use 13_3.png>
-Package pdftex.def Info: 13_3.png  used on input line 308.
+Package pdftex.def Info: 13_3.png  used on input line 310.
 (pdftex.def)             Requested size: 84.31479pt x 139.23985pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 304--314
 
-[2] [3 <./13_3.png>] (./AIP-EX13-Rosete-Borja.aux) ) 
+ []
+
+
+Overfull \hbox (52.29784pt too wide) in paragraph at lines 328--369
+[] 
+ []
+
+[3 <./13_3.png>] [4] (./AIP-EX13-Rosete-Borja.aux) ) 
 Here is how much of TeX's memory you used:
- 17094 strings out of 492167
- 353968 string characters out of 6129158
- 466677 words of memory out of 5000000
- 21119 multiletter control sequences out of 15000+600000
+ 17159 strings out of 492167
+ 354936 string characters out of 6129158
+ 466663 words of memory out of 5000000
+ 21184 multiletter control sequences out of 15000+600000
  12231 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,71p,494b,1059s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,9n,71p,652b,1059s stack positions out of 5000i,500n,10000p,200000b,80000s
 <d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on AIP-EX13-Rosete-Borja.pdf (3 pages, 137454 bytes).
+Output written on AIP-EX13-Rosete-Borja.pdf (4 pages, 144459 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

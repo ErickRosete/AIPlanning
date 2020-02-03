@@ -14,7 +14,7 @@
 \usepackage[%
     left=1in,%
     right=1.0in,%
-    top=0.8in,%
+    top=1in,%
     bottom=1in,%
 ]{geometry}%
 
@@ -297,7 +297,9 @@ Given arbitrary $n$ and $k$, using as variable order
 the order on which the variables show in the cost function
 there exists an EVMDD with that order and represents the cost function
 with $O(n*k^2)$ edges using the same construction as in the previous example.
+
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 3 %%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
 \section*{Exercise 13.3 - Evaluating states with EVMDDs}
 Consider a cost function represented by the EVMDD on the right.\\
 Let $s$ be a state with $s(x) = 1$ and $s(y) = 2$. To which value does the
@@ -307,6 +309,7 @@ $cost(s) = 3 + 0 + 5 = 8$
 	\centering
 	\includegraphics[scale=0.5]{13_3.png}
 \end{figure}
+\\
 %%%%%%%%%%%%%%%%%%%%%  Ejercicio 4 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Exercise 13.4 - EVMDD-based action compilation}
 Consider again the EVMDD from Exercise 13.3. Assume it encodes the cost $c_{o_1}$ of operator $o_1 = \langle z = 1 \land u = 1, x := 0\rangle$.
@@ -314,8 +317,54 @@ Consider again the EVMDD from Exercise 13.3. Assume it encodes the cost $c_{o_1}
 \begin{enumerate}[label=\alph*)]
 	\item Give the EVMDD-based action compilation of $o_1$ using this EVMDD.
 	\begin{align*}
-		&O_1^{z=1 \land u=1} = \langle z = 1 \land u = 1 \land \sigma = 0 \land \alpha_{o_1} = 0, \sigma := 1 \land \alpha_{o_1} = 1\rangle & cost=3&\\
-		&O_1^{1, x=0} = 
+		&O_1^{z=1 \land u=1} = \langle z = 1 \land u = 1 \land \sigma = 0 \land \alpha_{o_1} = 0, \sigma := 1 \land \alpha_{o_1} := 1\rangle & cost=3&\\
+		&O_1^{1, x=0} = \langle \alpha_{o_1} = 1 \land x = 0, \alpha_{o_1} := 3 \rangle & cost = 2&\\
+		&O_1^{1, x=1} = \langle \alpha_{o_1} = 1 \land x = 1, \alpha_{o_1} := 2 \rangle & cost = 0&\\
+		&O_1^{2, y=0} = \langle \alpha_{o_1} = 2 \land y = 0, \alpha_{o_1} := 3 \rangle & cost = 1&\\
+		&O_1^{2, y=1} = \langle \alpha_{o_1} = 2 \land y = 1, \alpha_{o_1} := 3 \rangle & cost = 0&\\
+		&O_1^{2, y=2} = \langle \alpha_{o_1} = 2 \land y = 2, \alpha_{o_1} := 3 \rangle & cost = 5&\\
+		&O_1^{x:=0} = \langle \alpha_{o_1} = 3, x := 0 \land \sigma := 0 \land \alpha_{o_1} := 0 \rangle & cost = 0&\\
 	\end{align*}
+	\item Let $\Pi = \langle V, I, O, \gamma, (c_o)_{o \in O} \rangle$ with $V = \{x, y, z, u\}$, $\pazocal{D}_x =\pazocal{D}_z = \pazocal{D}_u = \{0, 1\}$ and $\pazocal{D}_y = \{0, 1, 2\}$, initial state $I$ with $I(x) = I(y) = I(z) = I(u) = 1$, operators $O = \{o_1, o_2\}$ with $o_1$ as above and $o_2 = \langle x = 0, z := 0\rangle$ with cost function $c_{o_2} = 1$ and goal formula $\gamma = (z = 0)$. Give an optimal plan $\pi$ for $\Pi$ and an optimal plan $\pi$ for the EVMDD-based action compilation of $\Pi$ and their respective costs.\\
+	Optimal plan $\pi$ for $\Pi$\\
+	\begin{tikzpicture}[
+	node distance = 5cm,
+	goalnode/.style={circle, draw=green!60, text width = 4em, minimum size=7mm},
+	statenode/.style={rectangle, minimum size=2mm, text width = 4em},
+	]
+	%Nodes
+	\node[statenode]     (i)                      {$\{x \mapsto 1,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1 \} $};
+	\node[statenode]     (s1)       [right of = i]  {$\{x \mapsto 0,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1 \} $};
+	\node[goalnode]      (s2)       [right of = s1] {$\{x \mapsto 0,$ $y \mapsto 1,$ $z \mapsto 0,$ $u \mapsto 1 \} $};
+	
+	%Lines
+	\draw[->] (i) -- node[below]{$cost = 3$} node[above]{$o_1$} (s1);
+	\draw[->] (s1) -- node[below]{$cost = 1$} node[above]{$o_2$} (s2);
+	\end{tikzpicture}
+	\pagebreak\\
+	Optimal plan $\pi$ for $\Pi' = EAC(\Pi)$\\
+	\begin{tikzpicture}[
+	node distance = 5cm,
+	goalnode/.style={circle, draw=green!60, text width = 4em, minimum size=7mm},
+	statenode/.style={rectangle, minimum size=2mm, text width = 4em},
+	]
+	%Nodes
+	\node[statenode]     (i)                      {$\{x \mapsto 1,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1,$ $\sigma \mapsto 0,$ $\alpha_{o_1} \mapsto 0,$ $ \alpha_{o_2} \mapsto 0 \} $};
+	\node[statenode]     (s1)       [right of = i] {$\{x \mapsto 1,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1,$ $\sigma \mapsto 1,$ $\alpha_{o_1} \mapsto 1,$ $ \alpha_{o_2} \mapsto 0 \} $};
+	\node[statenode]     (s2)       [right of = s1] {$\{x \mapsto 1,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1,$ $\sigma \mapsto 1,$ $\alpha_{o_1} \mapsto 2,$ $ \alpha_{o_2} \mapsto 0 \} $};
+	\node[statenode]     (s3)       [right of = s2] {$\{x \mapsto 1,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1,$ $\sigma \mapsto 1,$ $\alpha_{o_1} \mapsto 3,$ $ \alpha_{o_2} \mapsto 0 \} $};
+	\node[statenode, yshift = -15mm]     (s4)       [below of = s3] {$\{x \mapsto 0,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1,$ $\sigma \mapsto 0,$ $\alpha_{o_1} \mapsto 0,$ $ \alpha_{o_2} \mapsto 0 \} $};
+	\node[statenode]     (s5)       [left of = s4] {$\{x \mapsto 0,$ $y \mapsto 1,$ $z \mapsto 1,$ $u \mapsto 1,$ $\sigma \mapsto 1,$ $\alpha_{o_1} \mapsto 0,$ $ \alpha_{o_2} \mapsto 1 \} $};
+	\node[goalnode]      (s6)       [left of = s5] {$\{x \mapsto 0,$ $y \mapsto 1,$ $z \mapsto 0,$ $u \mapsto 1,$ $\sigma \mapsto 0,$ $\alpha_{o_1} \mapsto 0,$ $ \alpha_{o_2} \mapsto 0 \} $};
+	
+	%Lines
+	\draw[->] (i) -- node[below]{$cost = 3$} node[above]{$o_1^{z=1 \land u=1}$} (s1);
+	\draw[->] (s1) -- node[below]{$cost = 0$} node[above]{$o_1^{1, x=1}$} (s2);
+	\draw[->] (s2) -- node[below]{$cost = 0$} node[above]{$o_1^{2, y=1}$} (s3);
+	\draw[->](s3) --node[sloped, below]{$cost = 0$} node[sloped, above]{$o_1^{x\text{:}=0}$} (s4);
+	\draw[->] (s4) -- node[below]{$cost = 1$} node[above]{$o_2^{x=0}$} (s5);
+	\draw[->] (s5) -- node[below]{$cost = 0$} node[above]{$o_2^{z\text{:}=0}$} (s6);
+	\end{tikzpicture}\\	
+	We can notice the cost of both plans is the same, 3.
 \end{enumerate}
 \end{document}
